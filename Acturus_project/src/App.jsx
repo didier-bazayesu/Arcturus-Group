@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <HandleSignUp/>
-      <p>ghocvh</p>
+  
     </>
   )
 }
