@@ -1,3 +1,4 @@
+import HandleSignUp from "./Pages/Signup"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-    <p className="bg-amber-500">hello</p>
+    <HandleSignUp/>
       </>
   )
 }
