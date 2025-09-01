@@ -1,8 +1,13 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const csv = require('csv-parser'); 
-const cors = require('cors');
+import express from 'express';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import csv from 'csv-parser';
+import cors from 'cors';
+
+// Fix __dirname and __filename in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 5000;
@@ -13,12 +18,11 @@ app.use(express.json());
 const data = {};
 
 // Function to read and parse a CSV file
-
 const readCsv = (filePath) => {
   return new Promise((resolve, reject) => {
     const results = [];
     fs.createReadStream(path.join(__dirname, filePath))
-      .pipe(csv())  // Correct usage: call the csv function directly
+      .pipe(csv())
       .on('data', (data) => results.push(data))
       .on('end', () => {
         console.log(`Successfully loaded ${filePath}`);
@@ -52,15 +56,13 @@ const loadData = async () => {
       skillGroupsCsv
     ] = await Promise.all(filesToLoad.map(readCsv));
 
-    // Create maps for quick lookups
-    
+    // Create maps
     data.occupationsMap = new Map(occupationsCsv.map(o => [o.ID, o]));
     data.skillsMap = new Map(skillsCsv.map(s => [s.ID, s]));
     data.occupationGroupsMap = new Map(occupationGroupsCsv.map(g => [g.ID, g]));
     data.skillGroupsMap = new Map(skillGroupsCsv.map(g => [g.ID, g]));
 
-    // Build the relationships
-
+    // Build relationships
     data.occupationsToSkills = {};
     occupationToSkillRelationsCsv.forEach(relation => {
       if (!data.occupationsToSkills[relation.OCCUPATIONID]) {
@@ -93,18 +95,18 @@ const loadData = async () => {
 
     data.occupationHierarchy = {};
     occupationHierarchyCsv.forEach(relation => {
-        if (!data.occupationHierarchy[relation.CHILDID]) {
-            data.occupationHierarchy[relation.CHILDID] = [];
-        }
-        data.occupationHierarchy[relation.CHILDID].push(relation.PARENTID);
+      if (!data.occupationHierarchy[relation.CHILDID]) {
+        data.occupationHierarchy[relation.CHILDID] = [];
+      }
+      data.occupationHierarchy[relation.CHILDID].push(relation.PARENTID);
     });
-    
+
     data.skillHierarchy = {};
     skillHierarchyCsv.forEach(relation => {
-        if (!data.skillHierarchy[relation.CHILDID]) {
-            data.skillHierarchy[relation.CHILDID] = [];
-        }
-        data.skillHierarchy[relation.CHILDID].push(relation.PARENTID);
+      if (!data.skillHierarchy[relation.CHILDID]) {
+        data.skillHierarchy[relation.CHILDID] = [];
+      }
+      data.skillHierarchy[relation.CHILDID].push(relation.PARENTID);
     });
 
     console.log('All data loaded successfully. Server is ready.');
@@ -114,8 +116,9 @@ const loadData = async () => {
   }
 };
 
-// Search for occupations
+// ---- Routes ----
 
+// Search for occupations
 app.get('/api/occupations/search', (req, res) => {
   const query = req.query.q ? req.query.q.toLowerCase() : '';
   const results = Array.from(data.occupationsMap.values())
@@ -130,14 +133,11 @@ app.get('/api/occupations/search', (req, res) => {
 });
 
 // Get detailed occupation information
-
 app.get('/api/occupations/:id', (req, res) => {
   const occupation = data.occupationsMap.get(req.params.id);
   if (!occupation) {
     return res.status(404).json({ error: 'Occupation not found.' });
   }
-
-  // Find related skills
 
   const skills = (data.occupationsToSkills[occupation.ID] || []).map(relation => {
     const skill = data.skillsMap.get(relation.skillId);
@@ -148,17 +148,15 @@ app.get('/api/occupations/:id', (req, res) => {
     } : null;
   }).filter(s => s !== null);
 
-  // Find related occupations (by sharing skills)
-
   const relatedOccupations = Array.from(new Set(
     skills.map(s => data.skillsToOccupations[s.id] || []).flat()
-    .filter(r => r.occupationId !== occupation.ID)
-    .map(r => r.occupationId)
+      .filter(r => r.occupationId !== occupation.ID)
+      .map(r => r.occupationId)
   )).slice(0, 10).map(id => {
     const relatedOcc = data.occupationsMap.get(id);
     return relatedOcc ? { id: relatedOcc.ID, label: relatedOcc.PREFERREDLABEL } : null;
   }).filter(o => o !== null);
-  
+
   res.json({
     id: occupation.ID,
     label: occupation.PREFERREDLABEL,
@@ -169,7 +167,6 @@ app.get('/api/occupations/:id', (req, res) => {
 });
 
 // Search for skills
-
 app.get('/api/skills/search', (req, res) => {
   const query = req.query.q ? req.query.q.toLowerCase() : '';
   const results = Array.from(data.skillsMap.values())
@@ -184,14 +181,11 @@ app.get('/api/skills/search', (req, res) => {
 });
 
 // Get detailed skill information
-
 app.get('/api/skills/:id', (req, res) => {
   const skill = data.skillsMap.get(req.params.id);
   if (!skill) {
     return res.status(404).json({ error: 'Skill not found.' });
   }
-
-  // Find related occupations
 
   const occupations = (data.skillsToOccupations[skill.ID] || []).map(relation => {
     const occupation = data.occupationsMap.get(relation.occupationId);
@@ -201,8 +195,6 @@ app.get('/api/skills/:id', (req, res) => {
       type: relation.relationType
     } : null;
   }).filter(o => o !== null);
-
-  // Find related skills
 
   const relatedSkills = Array.from(new Set(
     data.skillsToSkills[skill.ID] || []
@@ -220,8 +212,7 @@ app.get('/api/skills/:id', (req, res) => {
   });
 });
 
-// Start the server after data is loaded
-
+// ---- Start the server ----
 loadData().then(() => {
   app.listen(port, () => {
     console.log(`Server listening at http://localhost:${port}`);
