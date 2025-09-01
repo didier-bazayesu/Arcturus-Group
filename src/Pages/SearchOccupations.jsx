@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // Include Tailwind CSS via CDN for styling
-const App = () => {
+const SearchOccupations = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -165,4 +165,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default SearchOccupations;
