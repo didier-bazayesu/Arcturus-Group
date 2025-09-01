@@ -1,3 +1,4 @@
+import MainLandingPage from "./Pages/MainLandingPage"
 
 
 function App() {
@@ -5,8 +6,8 @@ function App() {
 
   return (
     <>
-    <p className="bg-amber-500">hello</p>
-      </>
+      <MainLandingPage/>  
+    </>
   )
 }
 
