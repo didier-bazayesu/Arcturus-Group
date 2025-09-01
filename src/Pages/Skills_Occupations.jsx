@@ -182,10 +182,7 @@ const Skills_Occupations = () => {
             <h1 className="text-3xl font-bold text-gray-800">{selectedItem.label}</h1>
             <p className="text-lg text-gray-600 leading-relaxed">{selectedItem.description}</p>
             
-            <div className="bg-gray-50 p-5 rounded-lg border-l-4 border-blue-500 shadow-inner">
-                <h3 className="text-xl font-semibold mb-2 text-blue-700">Explanation & Opportunities</h3>
-                <p className="text-gray-700 whitespace-pre-wrap">{selectedItem.generatedText}</p>
-            </div>
+           
 
             {searchType === 'skill' && (
               <>
