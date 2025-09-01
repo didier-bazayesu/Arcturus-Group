@@ -1,6 +1,7 @@
 import picture from '../assets/Clip path group.png'
 import lock from '../assets/Lock.png'
 import person from '../assets/Person.png'
+import { Link } from 'react-router-dom'
 
 function HandleLogin() {
     return (
@@ -63,7 +64,7 @@ function HandleLogin() {
 
                 {/* Links */}
                 <div className="grid grid-cols-2 grid-rows-2 gap-2 w-full text-center gap-y-10">
-                    <a href=""><p className="text-[13px] hover:underline cursor-pointer hover:text-blue-500">Create an account</p></a>
+                    <p className="text-[13px] hover:underline cursor-pointer hover:text-blue-500"><Link to="/signup" className="text-blue-600 underline">Signup</Link></p>
                     <a href=""><p className="text-[13px] hover:underline cursor-pointer hover:text-blue-500">Forget password?</p></a>
                     <a href=""><p className="hover:underline cursor-pointer hover:text-blue-500">About us</p></a>
                     <a href=""><p className="hover:underline cursor-pointer hover:text-blue-500">Contact us</p></a>

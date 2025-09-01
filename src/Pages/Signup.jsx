@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import picture from '../assets/Clip path group.png';
+
 
 function HandleSignUp() {
     return (
@@ -46,7 +48,10 @@ function HandleSignUp() {
                 {/* Already have account */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-5 text-xs sm:text-sm justify-center sm:justify-start">
                     <p>Already have an account?</p>
-                    <button className="hover:underline hover:text-blue-400">Login</button>
+                    <Link to="/login" className="text-blue-600 underline">
+                       
+                      <button className="hover:underline hover:text-blue-400">Login</button>
+                    </Link>
                 </div>
 
                 {/* Footer links */}
