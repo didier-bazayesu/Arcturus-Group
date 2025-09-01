@@ -56,7 +56,10 @@ function HandleSignUp() {
 
                 {/* Footer links */}
                 <div className="flex flex-col sm:flex-row text-xs sm:text-sm justify-center sm:justify-between gap-2 sm:gap-x-32 w-full">
-                    <a href="#" className="text-center sm:text-left">About us</a>
+                   
+                   <Link to="/About">
+                        <p href="#" className="text-center sm:text-left">About us</p>
+                   </Link>
                     <a href="#" className="text-center sm:text-right">Contact us</a>
                 </div>
 

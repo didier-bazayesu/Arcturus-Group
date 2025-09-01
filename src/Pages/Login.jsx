@@ -26,7 +26,7 @@ function HandleLogin() {
                             required
                             placeholder="Email"
                             className="w-full bg-[#d9d9d9] rounded-full pl-4 pr-12 py-2 
-              text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                         text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         <img
                             src={person}
@@ -66,7 +66,11 @@ function HandleLogin() {
                 <div className="grid grid-cols-2 grid-rows-2 gap-2 w-full text-center gap-y-10">
                     <p className="text-[13px] hover:underline cursor-pointer hover:text-blue-500"><Link to="/signup" className="text-blue-600 underline">Signup</Link></p>
                     <a href=""><p className="text-[13px] hover:underline cursor-pointer hover:text-blue-500">Forget password?</p></a>
-                    <a href=""><p className="hover:underline cursor-pointer hover:text-blue-500">About us</p></a>
+                    
+                    <Link to="/About"> 
+                    
+                        <p className="hover:underline cursor-pointer hover:text-blue-500">About us</p>
+                    </Link>
                     <a href=""><p className="hover:underline cursor-pointer hover:text-blue-500">Contact us</p></a>
                 </div>
 
