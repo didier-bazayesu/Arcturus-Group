@@ -64,7 +64,7 @@ export default function MainLandingPage() {
       </motion.div>
       </div>
 
-      <div className='grid justify-center items-center  grid-cols-1 sm:grid-cols-3 lg:gap-1 gap-10 sm:gap-2 [&>*]:rounded-[10px] [&>*]:text-center [&>*]:w-[168px] [&>*]:h-[120px] lg:mt-20 lg:pl-25 sm:pl-2'>
+      <div className='grid justify-center items-center  grid-cols-2 sm:grid-cols-3 lg:gap-1   gap-10 sm:gap-2 [&>*]:rounded-[10px] [&>*]:text-center [&>*]:w-[168px] [&>*]:h-[120px] lg:mt-20 lg:pl-25   sm:pl-20'>
          <motion.div className="bg-[#D9D9D9]"
     initial = {{opacity:0, x:10}}
     whileInView = {{opacity:1, x:0}}
