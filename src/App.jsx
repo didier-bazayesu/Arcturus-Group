@@ -1,11 +1,11 @@
-
+import Report from "./report"
+import ShortReport from "./shortReport"
 
 function App() {
-  
 
   return (
     <>
-    <p className="bg-amber-500">hello</p>
+    <ShortReport />
       </>
   )
 }
