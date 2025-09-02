@@ -9,6 +9,7 @@ import dashboard from "./img/Dashboard Layout.png"
 import personG from "./img/Person-g.png"
 import person from "./img/Person.png"
 import logout from './img/Logout.png';
+import { Link } from "react-router-dom";
 
 export function Navigation(){
   const [open, setOpen] = useState(true)
@@ -45,10 +46,9 @@ export function Navigation(){
        </nav>
       <aside className="">
         <ul className={`${open?"bottom-full":"bottom-100 h-120 py-20"} transition-all duration-300 overflow-hidden text-lg lg:text-sm lg:flex lg:static items-center gap-5 fixed bg-white lg:bg-transparent bottom-100 top-0 right-0 left-0 px-10 py-0 max-lg:space-y-8 text-[#032147] z-10`}>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Report</a></li>
+          <li><Link to="/Home">Home</Link></li>
+          <li><Link to="/About">About</Link></li>
+          <li><Link to="/Report">Report</Link></li>
           <li onClick={()=>handleAccount()}><button className="bg-[#2B7669] max-lg:w-full text-white px-5 py-2 lg:py-2 rounded-2xl">Account</button></li>
          <div onClick={()=>handleClick()} className={`${!open?"inline":"hidden"} fixed lg:static right-5 top-5 lg:hidden`}>
           <img src={close} alt="" className="w-10" />

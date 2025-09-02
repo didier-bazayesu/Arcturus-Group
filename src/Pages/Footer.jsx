@@ -1,7 +1,7 @@
 export default function Footer(){
     return (
         <>
-            <div className="flex justify-between sm:justify-around items-center w-full bg-[#032147] text-white p-6 ">
+            <div className="flex justify-between sm:justify-around items-center w-full bg-[#032147] text-white p-6 mt-10">
                <div className="space-y-4">
                 <h3>Links</h3>
                 <div className="[&>*]:block space-y-2">                
