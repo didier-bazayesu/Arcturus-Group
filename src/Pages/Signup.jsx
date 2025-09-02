@@ -4,6 +4,12 @@ import picture from '../assets/Clip path group.png';
 
 function HandleSignUp() {
     return (
+
+        <>
+
+         
+
+
         <div className="bg-[#032147] p-5 min-h-screen flex items-center justify-center">
             <div className="flex flex-col items-center bg-white w-full max-w-md mx-3 
             sm:mx-auto rounded-xl p-6 sm:p-8 shadow-md border-[1px]  box-shadow"
@@ -65,6 +71,7 @@ function HandleSignUp() {
 
             </div>
         </div>
+        </>
     );
 }
 
