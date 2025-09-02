@@ -1,15 +1,19 @@
 import Footer from "./Pages/Footer"
 import MainLandingPage from "./Pages/MainLandingPage"
 
+import ShortReport from "./shortReport"
+import { Navigation } from "./navigation"
 
 function App() {
-  
 
   return (
     <>
-      <MainLandingPage/>  
-      <Footer/>
-    </>
+
+    <Navigation />
+    <MainLandingPage/>  
+    <ShortReport /> 
+     <Footer/>
+      </>
   )
 }
 
