@@ -153,22 +153,22 @@ const SearchAndOccupations = () => {
       const isEssential = (type) => type === 'essential' ? 'text-green-500' : 'text-yellow-500';
       return (
         <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg md:col-span-2">
+            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-black">
               <span className="text-blue-600">Skill:</span> {label}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-600">
               {description || 'No description available.'}
             </p>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-purple-600">Occupations Requiring This Skill</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {occupations.length > 0 ? (
                 occupations.map(occ => (
-                  <li key={occ.id} className="text-gray-700 dark:text-gray-300">
+                  <li key={occ.id} className="text-gray-700 dark:text-gray-900">
                     <span className="font-semibold">{occ.label}</span>
                     <span className={`text-sm font-semibold ml-2 ${isEssential(occ.type)}`}>
                         ({occ.type})
@@ -180,14 +180,14 @@ const SearchAndOccupations = () => {
               )}
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-orange-600">Related Skills</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {relatedSkills.length > 0 ? (
                 relatedSkills.map(skill => (
-                  <li key={skill.id} className="text-gray-700 dark:text-gray-300">
+                  <li key={skill.id} className="text-gray-700 dark:text-gray-800">
                     <span className="font-semibold">{skill.label}</span>
                   </li>
                 ))
@@ -202,7 +202,7 @@ const SearchAndOccupations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -216,12 +216,12 @@ const SearchAndOccupations = () => {
         }
         `}
       </style>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 mb-8">
+      {/* <script src="https://cdn.tailwindcss.com"></script> */}
+      <div className="w-full max-w-4xl bg-white dark:bg-white shadow-xl rounded-2xl p-8 mb-8">
         <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-100">
           Career Skills and Occupations Explorer
         </h1>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-center text-black dark:text-gray-700 mb-8">
           Search for an occupation or a skill to find related information.
         </p>
         <div className="flex flex-col md:flex-row gap-4 mb-6">
@@ -230,11 +230,11 @@ const SearchAndOccupations = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={`Search for a ${searchType}...`}
-            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
+            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-black dark:bg-gray-300 placeholder-gray-800 dark:placeholder-black text-black"
           />
           <button
             onClick={() => setSearchType(searchType === 'occupation' ? 'skill' : 'occupation')}
-            className="p-4 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
+            className="p-4 rounded-full bg-green-200 dark:bg-green-700 text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
           >
             Switch to {searchType === 'occupation' ? 'Skills' : 'Occupations'}
           </button>
@@ -255,15 +255,15 @@ const SearchAndOccupations = () => {
 
       {/* Search results list */}
       {results.length > 0 && !selectedItem && (
-        <div className="w-full max-w-4xl bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+        <div className="w-full max-w-4xl bg-white dark:bg-white p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
+          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-black">
             Search Results
           </h2>
           <ul className="list-disc pl-5 space-y-2">
             {results.map(item => (
               <li 
                 key={item.id} 
-                className="text-gray-700 dark:text-gray-300 cursor-pointer hover:underline"
+                className="text-gray-700 dark:text-gray-700 cursor-pointer hover:underline"
                 onClick={() => fetchDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>

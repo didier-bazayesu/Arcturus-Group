@@ -15,8 +15,8 @@ function App() {
 
  <>
    <SearchAndOccupations />
-   
-    // <BrowserRouter>
+
+    {/* // <BrowserRouter>
     //   <Navigation />
     //   <Routes>
     //       <Route path="/login" element={<HandleLogin />} />
@@ -27,7 +27,7 @@ function App() {
     //       <Route path="/about" element={<MainLandingPage />} />
     //   </Routes>
     //   <Footer/> 
-    // </BrowserRouter>
+    // </BrowserRouter> */}
 
     </>
 
