@@ -1,3 +1,6 @@
+
+
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
@@ -7,11 +10,13 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 
+
 function App() {
 
   return (
 
-    <>
+ 
+
     <BrowserRouter>
       <Navigation />
       <Routes>
@@ -24,8 +29,9 @@ function App() {
       </Routes>
       <Footer/> 
     </BrowserRouter>
-    </>
+    
   );
+
 }
 
 export default App;
