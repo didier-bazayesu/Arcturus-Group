@@ -1,4 +1,8 @@
 @import "tailwindcss";
+
+.box-shadow{
+  box-shadow: 1px 1px 1px 1px #03204768;
+}
 .handle-shadow{
     box-shadow: 5px 5px 5px black;
 }
