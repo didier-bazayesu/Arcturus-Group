@@ -6,13 +6,15 @@ import Footer from "./Pages/Footer"
 import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
+import SearchAndOccupations from './Pages/skillsAndOccupa'
+
 
 
 function App() {
 
   return (
     <>
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Navigation />
       <Routes>
         <Route path="/Home" element={<ShortReport />} />
@@ -26,7 +28,8 @@ function App() {
         <Route path="/about" element={<MainLandingPage />} />
       </Routes>
     <Footer/> 
-    </BrowserRouter>
+    </BrowserRouter> */}
+    <SearchAndOccupations />
 
     </>
 
