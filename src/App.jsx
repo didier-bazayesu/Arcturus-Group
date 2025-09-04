@@ -15,12 +15,12 @@ function App() {
     <BrowserRouter>
       <Navigation />
       <Routes>
+           <Route path="/Home" element={<AboutUs/>}></Route>
           <Route path="/login" element={<HandleLogin />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs/>}/>
           <Route path="/Report" element={<ShortReport />} />
-          <Route path="/about" element={<MainLandingPage />} />
+          <Route path="/About" element={<MainLandingPage />} />
       </Routes>
       <Footer/> 
     </BrowserRouter>
