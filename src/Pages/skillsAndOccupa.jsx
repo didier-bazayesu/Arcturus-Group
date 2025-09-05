@@ -217,11 +217,11 @@ const SearchAndOccupations = () => {
         `}
       </style>
       <script src="https://cdn.tailwindcss.com"></script>
-      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 mb-8">
-        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-100">
+      <div className="w-full max-w-4xl bg-white dark:bg-gray-100 shadow-xl rounded-2xl p-8 mb-8">
+        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-900">
           Career Skills and Occupations Explorer
         </h1>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-center text-gray-700 dark:text-gray-700 mb-8">
           Search for an occupation or a skill to find related information.
         </p>
         <div className="flex flex-col md:flex-row gap-4 mb-6">
@@ -230,11 +230,11 @@ const SearchAndOccupations = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={`Search for a ${searchType}...`}
-            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
+            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-black dark:bg-green-900 placeholder-gray-900 dark:placeholder-gray-400"
           />
           <button
             onClick={() => setSearchType(searchType === 'occupation' ? 'skill' : 'occupation')}
-            className="p-4 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
+            className="p-4 rounded-full bg-gray-200 dark:bg-blue-900 text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
           >
             Switch to {searchType === 'occupation' ? 'Skills' : 'Occupations'}
           </button>
