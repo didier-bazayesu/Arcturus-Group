@@ -98,14 +98,14 @@ const SearchAndOccupations = () => {
               )}
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-yellow-600">Optional Skills</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {optionalSkills.length > 0 ? (
                 optionalSkills.map(skill => (
-                  <li key={skill.ID} className="text-gray-700 dark:text-gray-300">
+                  <li key={skill.ID} className="text-gray-900 dark:text-gray-900">
                     <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                   </li>
                 ))
