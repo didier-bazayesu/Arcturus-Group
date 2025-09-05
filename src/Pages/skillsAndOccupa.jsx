@@ -74,11 +74,11 @@ const SearchAndOccupations = () => {
       const { occupation, requiredSkills, optionalSkills, relatedSkills, relatedOccupations } = selectedItem;
       return (
         <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+          <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg md:col-span-2">
+            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-pink-500">
               <span className="text-blue-600">Occupation:</span> {occupation.label}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-900 dark:text-gray-900">
               {occupation.description || 'No description available.'}
             </p>
           </div>
