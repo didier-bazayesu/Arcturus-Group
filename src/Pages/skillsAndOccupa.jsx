@@ -202,7 +202,7 @@ const SearchAndOccupations = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-900 p-8 flex flex-col items-center font-sans">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -230,11 +230,11 @@ const SearchAndOccupations = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={`Search for a ${searchType}...`}
-            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-black dark:bg-green-900 placeholder-gray-900 dark:placeholder-gray-400"
+            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-gray-100 dark:bg-green-900 placeholder-gray-900 dark:placeholder-gray-400 text-gray-200"
           />
           <button
             onClick={() => setSearchType(searchType === 'occupation' ? 'skill' : 'occupation')}
-            className="p-4 rounded-full bg-gray-200 dark:bg-blue-900 text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
+            className="p-4 rounded-full bg-gray-200 dark:bg-blue-900 text-gray-100 dark:text-gray-100 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
           >
             Switch to {searchType === 'occupation' ? 'Skills' : 'Occupations'}
           </button>
