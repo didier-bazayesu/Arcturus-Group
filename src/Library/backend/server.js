@@ -4,6 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import csv from 'csv-parser';
 import cors from 'cors';
+import OpenAI from "openai";
 
 // Fix __dirname and __filename in ES modules
 const __filename = fileURLToPath(import.meta.url);

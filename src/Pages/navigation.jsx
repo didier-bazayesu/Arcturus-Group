@@ -31,6 +31,20 @@ export function Navigation(){
   const handleBackdropClick = () => {
     setAccount(false)
   }
+  const handleActive = (e) =>{
+    const clicked = e.target
+    if(clicked.tagName.toLowerCase() == "img"){
+        if(!clicked.parentNode.classList.contains('animate-bounce')){
+          clicked.parentNode.classList.add("animate-bounce")
+          clicked.parentNode.classList.add("border-[#2b766a7a]")
+          clicked.parentNode.classList.add("border-b-5")
+        } else{
+          clicked.parentNode.classList.remove("animate-bounce")
+          clicked.parentNode.classList.remove("border-[#2b766a7a]")
+          clicked.parentNode.classList.remove("border-b-5")
+        }
+    }
+  }
   
   return(
     <>
@@ -47,6 +61,7 @@ export function Navigation(){
         <ul className={`${open?"bottom-full":"bottom-100 h-120 py-20"} transition-all duration-300 overflow-hidden text-lg lg:text-sm lg:flex lg:static items-center gap-5 fixed bg-white lg:bg-transparent bottom-100 top-0 right-0 left-0 px-10 py-0 max-lg:space-y-8 text-[#032147] z-10`}>
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
+          <li><Link to="/Explore">Exprole</Link></li>
           <li><Link to="/Report">Report</Link></li>
           <li onClick={()=>handleAccount()}><button className="bg-[#2B7669] max-lg:w-full text-white px-5 py-2 lg:py-2 rounded-2xl">Account</button></li>
          <div onClick={()=>handleClick()} className={`${!open?"inline":"hidden"} fixed lg:static right-5 top-5 lg:hidden`}>
@@ -56,16 +71,11 @@ export function Navigation(){
         <div onClick={()=>handleClick()} className={`${open?"hidden":"block"} fixed lg:hidden top-0 bottom-0 right-0 left-0 bg-[#032047b1] z-9 backdrop-blur-sm`}></div>
       </aside>
       
-      <div className="fixed lg:hidden bottom-0 right-0 left-0 h-15 bg-[#ffffff] rounded-t-2xl z-5 flex items-center [&>*]:mx-auto shadow-[0px_1px_4px_1px]">
-        <motion.div 
-         animate={{y:[0,-5,0]}}
-        transition={{duration:0.8, repeat: Infinity}}
-        >
-        <div className="border-b-7 border-[#2B7669]">
+      <div onClick={(e)=>handleActive(e)} className="fixed lg:hidden bottom-0 right-0 left-0 h-15 bg-[#ffffff] rounded-t-2xl z-5 flex items-center [&>*]:mx-auto shadow-[0px_1px_4px_1px]">
+        <div className="">
           <img src={dashboard} alt="" className="w-10" />
         </div>
-        </motion.div>
-        <div>
+        <div className="">
           <img src={booklet} alt="" className="w-10" />
          </div>
         <div>

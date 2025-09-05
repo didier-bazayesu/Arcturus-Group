@@ -225,14 +225,14 @@ const SearchAndOccupations = () => {
         <p className="text-center text-black dark:text-gray-700 mb-8">
           Search for an occupation or a skill to find related information.
         </p>
-        <div className="flex flex-col md:flex-row gap-4 mb-6">
+        <div className="flex flex-col md:flex-row w-full gap-4 mb-6">
           <div className='flex items-center border-1 border-[#313131] flex-grow px-4 rounded-full border-gray-[#313131]'>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={`Search for a ${searchType}...`}
-            className="flex-grow p-4 border-none rounded-full border-1 border-gray-[#313131] focus:outline-none focus:ring-blue-[#032147] transition-colors  dark:bg-white placeholder-gray-200 dark:placeholder-[#313131] text-[#313131]"
+            className="flex-grow p-4 border-none focus:outline-none focus:ring-blue-[#032147] transition-color placeholder-gray-200 dark:placeholder-[#313131] text-[#313131]"
           />
           <div>
             <img src={search} alt="" />
@@ -269,7 +269,7 @@ const SearchAndOccupations = () => {
             {results.map(item => (
               <li
                 key={item.id} 
-                className="CECBCB dark:text-[#032147] bg-[#CECBCB] cursor-pointer transition-all duration-300 hover:bg-[#032147] hover:text-white p-3 rounded-2xl"
+                className="text-sm dark:text-[#032147] bg-[#CECBCB] cursor-pointer transition-all duration-300 hover:bg-[#032147] hover:text-white p-3 px-4 rounded-2xl"
                 onClick={() => fetchDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>
