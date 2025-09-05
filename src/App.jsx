@@ -12,12 +12,12 @@ function App() {
           <Route path="/login" element={<HandleLogin />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs/>}/>
+          <Route path="/About" element={<AboutUs />} />
 
         </Routes>
       </Router>
 
-     
+
     </>
   );
 }
