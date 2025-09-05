@@ -9,6 +9,7 @@ import Footer from "./Pages/Footer"
 import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
+import SearchAndOccupations from './Pages/skillsAndOccupa'
 
 
 function App() {
@@ -16,22 +17,25 @@ function App() {
   return (
 
  
-
-    <BrowserRouter>
-      <Navigation />
-      <Routes>
-          <Route path="/login" element={<HandleLogin />} />
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs/>}/>
-          <Route path="/Report" element={<ShortReport />} />
-          <Route path="/about" element={<MainLandingPage />} />
-      </Routes>
-      <Footer/> 
-    </BrowserRouter>
+<SearchAndOccupations />
     
   );
 
 }
 
 export default App;
+
+
+
+    // <BrowserRouter>
+    //   <Navigation />
+    //   <Routes>
+    //       <Route path="/login" element={<HandleLogin />} />
+    //       <Route path="/" element={<Navigate to="/login" />} />
+    //       <Route path="/signup" element={<HandleSignUp />} />
+    //       <Route path="/About" element={<AboutUs/>}/>
+    //       <Route path="/Report" element={<ShortReport />} />
+    //       <Route path="/about" element={<MainLandingPage />} />
+    //   </Routes>
+    //   <Footer/> 
+    // </BrowserRouter>
