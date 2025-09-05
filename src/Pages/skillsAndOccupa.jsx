@@ -114,14 +114,14 @@ const SearchAndOccupations = () => {
               )}
             </ul>
           </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-purple-600">Related Occupations</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {relatedOccupations.length > 0 ? (
                 relatedOccupations.map(occ => (
-                  <li key={occ.id} className="text-gray-700 dark:text-gray-300">
+                  <li key={occ.id} className="text-gray-900 dark:text-gray-900">
                     <span className="font-semibold">{occ.label}</span>
                   </li>
                 ))
