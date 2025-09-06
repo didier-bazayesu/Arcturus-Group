@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import search from "./img/Search.png"
 
 // Debounce function to limit API calls on search input
 const debounce = (func, delay) => {
@@ -74,7 +73,6 @@ const SearchAndOccupations = () => {
     if (searchType === 'occupation') {
       const { occupation, requiredSkills, optionalSkills, relatedSkills, relatedOccupations } = selectedItem;
       return (
-
         <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
           <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg md:col-span-2">
             <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-pink-500">
@@ -85,20 +83,13 @@ const SearchAndOccupations = () => {
             </p>
           </div>
           <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
-
-          <div className="bg-white p-6 rounded-2xl shadow-lg">
-
             <h3 className="text-xl font-bold mb-4">
-              <span className="text-[#177C50]">Essential Skills</span>
+              <span className="text-green-600">Essential Skills</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {requiredSkills.length > 0 ? (
                 requiredSkills.map(skill => (
-
                   <li key={skill.ID} className="text-gray-900 dark:text-gray-900">
-
-                
-
                     <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                   </li>
                 ))
@@ -158,27 +149,26 @@ const SearchAndOccupations = () => {
         </div>
       );
     } else { // searchType === 'skill'
-
       const { label, description, occupations, relatedSkills } = selectedItem;
       const isEssential = (type) => type === 'essential' ? 'text-green-500' : 'text-yellow-500';
       return (
         <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-black">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:col-span-2">
+            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
               <span className="text-blue-600">Skill:</span> {label}
             </h2>
-            <p className="text-gray-600 dark:text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               {description || 'No description available.'}
             </p>
           </div>
-          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-purple-600">Occupations Requiring This Skill</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {occupations.length > 0 ? (
                 occupations.map(occ => (
-                  <li key={occ.id} className="text-gray-700 dark:text-gray-900">
+                  <li key={occ.id} className="text-gray-700 dark:text-gray-300">
                     <span className="font-semibold">{occ.label}</span>
                     <span className={`text-sm font-semibold ml-2 ${isEssential(occ.type)}`}>
                         ({occ.type})
@@ -190,14 +180,14 @@ const SearchAndOccupations = () => {
               )}
             </ul>
           </div>
-          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl font-bold mb-4">
               <span className="text-orange-600">Related Skills</span>
             </h3>
             <ul className="list-disc pl-5 space-y-2">
               {relatedSkills.length > 0 ? (
                 relatedSkills.map(skill => (
-                  <li key={skill.id} className="text-gray-700 dark:text-gray-800">
+                  <li key={skill.id} className="text-gray-700 dark:text-gray-300">
                     <span className="font-semibold">{skill.label}</span>
                   </li>
                 ))
@@ -212,11 +202,7 @@ const SearchAndOccupations = () => {
   };
 
   return (
-
-   
-
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
-
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-900 p-8 flex flex-col items-center font-sans">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -230,46 +216,26 @@ const SearchAndOccupations = () => {
         }
         `}
       </style>
-
       <script src="https://cdn.tailwindcss.com"></script>
       <div className="w-full max-w-4xl bg-white dark:bg-gray-100 shadow-xl rounded-2xl p-8 mb-8">
         <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-900">
           Career Skills and Occupations Explorer
         </h1>
         <p className="text-center text-gray-700 dark:text-gray-700 mb-8">
-
-      {/* <script src="https://cdn.tailwindcss.com"></script> */}
-      <div className="w-full bg-white dark:bg-white shadow-xl rounded-2xl p-8 mb-8">
-        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-[#032147]">
-          Career Skills and Occupations Explorer
-        </h1>
-        <p className="text-center text-black dark:text-gray-700 mb-8">
-
           Search for an occupation or a skill to find related information.
         </p>
         <div className="flex flex-col md:flex-row gap-4 mb-6">
-          <div className='flex items-center border-1 border-[#313131] flex-grow px-4 rounded-full border-gray-[#313131]'>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={`Search for a ${searchType}...`}
-
             className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-gray-100 dark:bg-green-900 placeholder-gray-900 dark:placeholder-gray-400 text-gray-200"
-
-            className="flex-grow p-4 border-none rounded-full border-1 border-gray-[#313131] focus:outline-none focus:ring-blue-[#032147] transition-colors  dark:bg-white placeholder-gray-200 dark:placeholder-[#313131] text-[#313131]"
-
           />
-          <div>
-            <img src={search} alt="" />
-          </div>
-          </div>
           <button
             onClick={() => setSearchType(searchType === 'occupation' ? 'skill' : 'occupation')}
-
             className="p-4 rounded-full bg-gray-200 dark:bg-blue-900 text-gray-100 dark:text-gray-100 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg"
-
-            className="p-4 rounded-full bg-green-200 dark:bg-[#177C50] text-gray-800 dark:text-gray-200 font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-lg" >
+          >
             Switch to {searchType === 'occupation' ? 'Skills' : 'Occupations'}
           </button>
         </div>
@@ -289,24 +255,15 @@ const SearchAndOccupations = () => {
 
       {/* Search results list */}
       {results.length > 0 && !selectedItem && (
-
         <div className="w-full max-w-4xl bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
           <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-blue-800">
-
-        <div className="w-full bg-white dark:bg-white p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-black">
-
             Search Results
           </h2>
-          <ul className=" pl-5 space-y-2">
+          <ul className="list-disc pl-5 space-y-2">
             {results.map(item => (
-              <li
+              <li 
                 key={item.id} 
-
                 className="text-gray-900 dark:text-gray-900 cursor-pointer hover:underline"
-
-                className="CECBCB dark:text-[#032147] bg-[#CECBCB] cursor-pointer transition-all duration-300 hover:bg-[#032147] hover:text-white p-3 rounded-2xl"
-
                 onClick={() => fetchDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>
