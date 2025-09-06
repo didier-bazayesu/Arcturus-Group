@@ -1,6 +1,3 @@
-
-
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
@@ -11,27 +8,39 @@ import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SkillsExplorer from './Pages/SearchSkills'
 import  OccupationsExplorer from './Pages/SearchOccupations'
+import SearchAndOccupations from './Pages/skillsAndOccupa'
+
+
 
 
 function App() {
 
   return (
+
     
   <BrowserRouter>
       <Navigation />
-      <Routes>
-          <Route path="/login" element={<HandleLogin />} />
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs/>}/>
-          <Route path="/Report" element={<ShortReport />} />
-          <Route path="/about" element={<MainLandingPage />} />
-      </Routes>
-      <Footer/> 
-    </BrowserRouter>
-   
 
-    
+ 
+    {<BrowserRouter>
+    <Navigation />
+
+      <Routes>
+        <Route path="/Home" element={<ShortReport />} />
+        <Route path="/Report" element={<ShortReport />} />
+        <Route path="/about" element={<MainLandingPage />} />
+        <Route path="/login" element={<HandleLogin />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/signup" element={<HandleSignUp />} />
+        <Route path="/About" element={<AboutUs/>}/>
+        <Route path="/Report" element={<ShortReport />} />
+        <Route path="/about" element={<MainLandingPage />} />
+      </Routes>
+    <Footer/> 
+    </BrowserRouter>}
+  
+
+
   );
 
 }
