@@ -2,6 +2,7 @@ import React from 'react'
 import screenshoot from './assets/screenshoot.png'
 import mission from './assets/mision.avif'
 import { motion } from "framer-motion";
+import download  from './assets/a.jpeg' 
 
 
 function MainDesign() {
@@ -33,7 +34,7 @@ function MainDesign() {
                   className="absolute bottom-0 right-0 -mb-[150px] sm:-mb-[200px] md:-mb-[300px] mr-5 sm:mr-10 md:mr-20"
               >
                   <img
-                      src={mission}
+                      src={download}
                       alt=""
                       className="w-[300px] sm:w-[450px] md:w-[600px] h-[200px] sm:h-[300px] md:h-[400px] rounded-2xl"
                   />
