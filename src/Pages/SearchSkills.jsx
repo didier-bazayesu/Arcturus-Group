@@ -169,15 +169,15 @@ const SkillsExplorer = () => {
 
       {/* Search results list */}
       {searchResults.length > 0 && !selectedSkill && (
-        <div className="w-full max-w-4xl bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+        <div className="w-full max-w-4xl bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
+          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-blue-800">
             Search Results
           </h2>
           <ul className="list-disc pl-5 space-y-2">
             {searchResults.map(item => (
               <li 
                 key={item.id} 
-                className="text-gray-700 dark:text-gray-300 cursor-pointer hover:underline"
+                className="text-gray-700 dark:text-gray-700 cursor-pointer hover:underline"
                 onClick={() => fetchSkillDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>
