@@ -20,7 +20,7 @@ function App() {
   <BrowserRouter>
       <Navigation />
       <Routes>
-          <Route path="/login" element={<HandleLogin />} />
+          <Route path="/login" element={<OccupationsExplorer />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
           <Route path="/About" element={<AboutUs/>}/>
