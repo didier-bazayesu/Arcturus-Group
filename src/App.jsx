@@ -7,7 +7,7 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SearchAndOccupations from './Pages/skillsAndOccupa'
-import ESCOMapExplorer from "./Pages/map";
+import ESCOMapExplorer from "./Pages/chat";
 
 
 
@@ -15,13 +15,13 @@ function App() {
 
   return (
     <>
-    {/* { <BrowserRouter>
+    <BrowserRouter>
     <Navigation />
       <Routes>
         <Route path="/Home" element={<ShortReport />} />
         <Route path="/Report" element={<ShortReport />} />
-        <Route path="/Explore" element={<SearchAndOccupations />} /> */}
-        {/* 
+        <Route path="/Explore" element={<SearchAndOccupations />} />
+        
         <Route path="/about" element={<MainLandingPage />} />
         <Route path="/login" element={<HandleLogin />} />
         <Route path="/" element={<Navigate to="/login" />} />
@@ -29,11 +29,11 @@ function App() {
         <Route path="/About" element={<AboutUs/>}/>
         <Route path="/Report" element={<ShortReport />} />
         <Route path="/about" element={<MainLandingPage />} />
-         */}
-      {/* </Routes>
+        
+      </Routes>
     <Footer/> 
-    </BrowserRouter> } */}
-    <ESCOMapExplorer />
+    </BrowserRouter> 
+    {/* <ESCOMapExplorer /> */}
 
     </>
 

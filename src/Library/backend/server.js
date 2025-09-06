@@ -4,7 +4,9 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import csv from 'csv-parser';
 import cors from 'cors';
-import OpenAI from "openai";
+// import { OpenAIApi } from 'openai'
+import bodyParser from 'body-parser';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Fix __dirname and __filename in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -12,11 +14,15 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3000;
+app.use(express.json());
+app.use(bodyParser.json())
+app.use(cors())
 
 app.use(cors());
 app.use(express.json());
 
 const data = {};
+const API_KEY = 'AIzaSyAxMmBQ-4w9sqMqG5EOFiF25oHF3mq91uw'; 
 
 // Function to read and parse a CSV file
 const readCsv = (filePath) => {
@@ -122,8 +128,11 @@ const loadData = async () => {
 
 // Search for occupations
 app.get('/api/occupations/search', (req, res) => {
+const occupationsArray = Array.from(data.occupationsMap.values());
+  res.json(occupationsArray);
     const query = req.query.q ? req.query.q.toLowerCase() : '';
     const results = Array.from(data.occupationsMap.values())
+
         .filter(o => o.PREFERREDLABEL.toLowerCase().includes(query))
         .slice(0, 20)
         .map(o => ({
@@ -240,6 +249,37 @@ app.get('/api/skills/:id', (req, res) => {
         relatedSkills
     });
 });
+
+
+const genAI = new GoogleGenerativeAI(API_KEY);
+
+app.post('/chat', async (req, res) => {
+    try {
+        const { history, message } = req.body;
+        console.log('Received request with history:', history);
+        console.log('And message:', message);
+
+        if (!Array.isArray(history)) {
+            console.error('History is not an array.');
+            return res.status(400).json({ error: 'History must be an array.' });
+        }
+
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        console.log('Model loaded.');
+        const chat = model.startChat({ history: history });
+        console.log('Chat started.');
+        const result = await chat.sendMessage(message);
+        console.log('Message sent, received result:', result);
+        const responseText = result.response.text();
+        console.log('Extracted response text:', responseText);
+
+        res.json({ text: responseText });
+    } catch (error) {
+        console.error('Caught error in chat endpoint:', error);
+        res.status(500).json({ error: 'An error occurred while processing your request.' });
+    }
+});
+
 
 // ---- Start the server ----
 loadData().then(() => {
