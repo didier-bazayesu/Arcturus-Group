@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
 import AboutUs from "./Pages/About";
+import MainDesign from "./MainDesign";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
     <>
       <Router>
         <Routes>
+          <Route path="/main_design" element={<MainDesign/>}></Route>
           <Route path="/login" element={<HandleLogin />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
