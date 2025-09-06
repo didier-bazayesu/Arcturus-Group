@@ -205,7 +205,7 @@ const OccupationsExplorer = () => {
             {searchResults.map(item => (
               <li 
                 key={item.id} 
-                className="text-gray-700 dark:text-gray-300 cursor-pointer hover:underline"
+                className="text-black dark:text-gray-300 cursor-pointer hover:underline"
                 onClick={() => fetchOccupationDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>

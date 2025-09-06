@@ -43,7 +43,7 @@ const SearchAndOccupations = () => {
     }
   }, [searchQuery, searchType]);
 
-  const debouncedSearch = useCallback(debounce(performSearch, 500), [performSearch]);
+  const debouncedSearch = useCallback(debounce(performSearch, 500), [performSearch]); 
 
   useEffect(() => {
     debouncedSearch();
@@ -55,7 +55,7 @@ const SearchAndOccupations = () => {
     setResults([]);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/${searchType}s/${id}`);
+      const response = await fetch(`http://localhost:3000/api/${searchType}/${id}`);
       if (!response.ok) {
         throw new Error(`Failed to fetch ${searchType} details.`);
       }
