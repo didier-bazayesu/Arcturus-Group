@@ -19,8 +19,17 @@ import ConnectPart from './Component/ConnectPart'
 function App() {
   return (
 
+ <AboutUs />
 
-<BrowserRouter>
+
+
+
+  );
+}
+
+export default App;
+    
+{/* <BrowserRouter>
       <Navigation />
 
       <Routes>
@@ -40,13 +49,5 @@ function App() {
       </Routes>
 
       <Footer />
-    </BrowserRouter> 
-
-
-
-  );
-}
-
-export default App;
-    
+    </BrowserRouter>  */}
 
