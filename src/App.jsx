@@ -18,11 +18,10 @@ function App() {
   return (
 
     
-  <BrowserRouter>
-      <Navigation />
+  
 
  
-    {<BrowserRouter>
+    <BrowserRouter>
     <Navigation />
 
       <Routes>
@@ -37,7 +36,7 @@ function App() {
         <Route path="/about" element={<MainLandingPage />} />
       </Routes>
     <Footer/> 
-    </BrowserRouter>}
+    </BrowserRouter>
   
 
 
