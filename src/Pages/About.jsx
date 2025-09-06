@@ -1,3 +1,147 @@
+// import React, { useState, useRef, useEffect, useCallback } from 'react';
+// import Papa from 'papaparse';
+
+// const WorldOfWorkMap = () => {
+//   const canvasRef = useRef(null);
+//   const [zoomLevel, setZoomLevel] = useState(1);
+//   const [panX, setPanX] = useState(0);
+//   const [panY, setPanY] = useState(0);
+//   const [isDragging, setIsDragging] = useState(false);
+//   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+//   const [selectedNode, setSelectedNode] = useState(null);
+
+//   const [workData, setWorkData] = useState({ categories: [], occupations: {}, skills: {}, hierarchy: [] });
+
+//   useEffect(() => {
+//     const loadCSV = async (url) => {
+//       const res = await fetch(url);
+//       const text = await res.text();
+//       return new Promise(resolve => {
+//         Papa.parse(text, { header: true, skipEmptyLines: true, complete: (res) => resolve(res.data) });
+//       });
+//     };
+
+//     const loadAll = async () => {
+//       const [groups, occs, skl, hier] = await Promise.all([
+//         loadCSV('/occupation_groups.csv'),
+//         loadCSV('/occupations.csv'),
+//         loadCSV('/skills.csv'),
+//         loadCSV('/occupation_hierarchy.csv')
+//       ]);
+
+//       // Assign positions for visualization
+//       const categories = groups.map((g, i) => ({
+//         id: g.CODE,
+//         label: g.PREFERREDLABEL,
+//         x: 150 + i * 150,
+//         y: 100,
+//         size: 50
+//       }));
+
+//       const occupationsByGroup = {};
+//       groups.forEach(g => {
+//         occupationsByGroup[g.CODE] = occs
+//           .filter(o => hier.some(h => h.PARENTID === g.CODE && h.CHILDID === o.CODE))
+//           .map((o, idx) => ({
+//             id: o.CODE,
+//             label: o.PREFERREDLABEL,
+//             x: 150 + idx * 100,
+//             y: 250,
+//             connections: []
+//           }));
+//       });
+
+//       const skillsByOccupation = {};
+//       occs.forEach(o => {
+//         skillsByOccupation[o.CODE] = skl
+//           .filter(s => hier.some(h => h.PARENTID === o.CODE && h.CHILDID === s.ID))
+//           .map((s, idx) => ({
+//             id: s.ID,
+//             label: s.PREFERREDLABEL,
+//             x: 150 + idx * 80,
+//             y: 400
+//           }));
+//       });
+
+//       setWorkData({ categories, occupations: occupationsByGroup, skills: skillsByOccupation, hierarchy: hier });
+//     };
+
+//     loadAll();
+//   }, []);
+
+//   const getVisibleNodes = useCallback(() => {
+//     if (!selectedNode) return { type: 'categories', nodes: workData.categories };
+//     if (workData.occupations[selectedNode.id]) return { type: 'occupations', nodes: workData.occupations[selectedNode.id] };
+//     if (workData.skills[selectedNode.id]) return { type: 'skills', nodes: workData.skills[selectedNode.id] };
+//     return { type: 'categories', nodes: workData.categories };
+//   }, [workData, selectedNode]);
+
+//   const drawNodes = useCallback(() => {
+//     const canvas = canvasRef.current;
+//     if (!canvas) return;
+//     const ctx = canvas.getContext('2d');
+//     const { type, nodes } = getVisibleNodes();
+
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     ctx.save();
+//     ctx.translate(panX, panY);
+//     ctx.scale(zoomLevel, zoomLevel);
+
+//     nodes.forEach(node => {
+//       ctx.beginPath();
+//       ctx.arc(node.x, node.y, 20, 0, 2 * Math.PI);
+//       ctx.fillStyle = '#4F46E5';
+//       ctx.fill();
+//       ctx.strokeStyle = '#000';
+//       ctx.stroke();
+//       ctx.fillStyle = '#fff';
+//       ctx.font = '12px Arial';
+//       ctx.textAlign = 'center';
+//       ctx.fillText(node.label, node.x, node.y - 25);
+//     });
+
+//     ctx.restore();
+//   }, [getVisibleNodes, panX, panY, zoomLevel]);
+
+//   useEffect(() => { drawNodes(); }, [drawNodes]);
+
+//   const screenToWorld = useCallback((x, y) => ({ x: (x - panX) / zoomLevel, y: (y - panY) / zoomLevel }), [panX, panY, zoomLevel]);
+
+//   const handleWheel = useCallback(e => { e.preventDefault(); setZoomLevel(z => Math.max(0.5, Math.min(5, z * (e.deltaY > 0 ? 0.9 : 1.1)))); }, []);
+//   const handleMouseDown = useCallback(e => { setIsDragging(true); setDragStart({ x: e.clientX - panX, y: e.clientY - panY }); }, [panX, panY]);
+//   const handleMouseMove = useCallback(e => { if (isDragging) { setPanX(e.clientX - dragStart.x); setPanY(e.clientY - dragStart.y); drawNodes(); } }, [isDragging, dragStart, drawNodes]);
+//   const handleMouseUp = useCallback(() => setIsDragging(false), []);
+//   const handleClick = useCallback(e => {
+//     const world = screenToWorld(e.clientX, e.clientY);
+//     const { nodes } = getVisibleNodes();
+//     const clicked = nodes.find(n => Math.hypot(world.x - n.x, world.y - n.y) < 20);
+//     if (clicked) setSelectedNode(clicked);
+//   }, [getVisibleNodes, screenToWorld]);
+
+//   useEffect(() => {
+//     const c = canvasRef.current;
+//     if (!c) return;
+//     c.addEventListener('wheel', handleWheel);
+//     c.addEventListener('mousedown', handleMouseDown);
+//     c.addEventListener('mousemove', handleMouseMove);
+//     c.addEventListener('mouseup', handleMouseUp);
+//     c.addEventListener('click', handleClick);
+//     return () => {
+//       c.removeEventListener('wheel', handleWheel);
+//       c.removeEventListener('mousedown', handleMouseDown);
+//       c.removeEventListener('mousemove', handleMouseMove);
+//       c.removeEventListener('mouseup', handleMouseUp);
+//       c.removeEventListener('click', handleClick);
+//     };
+//   }, [handleWheel, handleMouseDown, handleMouseMove, handleMouseUp, handleClick]);
+
+//   return <canvas ref={canvasRef} width={800} height={600} className="border" />;
+// };
+
+// export default WorldOfWorkMap;
+
+
+
 import download from '../assets/Rectangle 4.png'
 import download1 from '../assets/mision.avif'
 import { easeInOut, motion } from 'framer-motion';

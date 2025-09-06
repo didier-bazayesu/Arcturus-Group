@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
 import AboutUs from "./Pages/About";
@@ -17,27 +17,34 @@ import ConnectPart from './Component/ConnectPart'
 
 
 function App() {
-
   return (
 
 
 <BrowserRouter>
       <Navigation />
+
       <Routes>
-        <Route path="/Home" element={<AboutUs />}></Route>
-        <Route path="/login" element={<HandleLogin />} />
         <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<HandleLogin />} />
         <Route path="/signup" element={<HandleSignUp />} />
-        <Route path="/Report" element={<ShortReport />} />
-        <Route path="/About" element={<MainLandingPage />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/report" element={<ShortReport />} />
+        <Route path="/main_design" element={<MainDesign />} />
+        <Route path="/searchgroup" element={<Searchgroup />} />
+        <Route path="/skills" element={<SkillsExplorer />} />
+        <Route path="/occupations" element={<OccupationsExplorer />} />
+        <Route path="/skills-and-occupations" element={<SearchAndOccupations />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/explore" element={<ExploreTool />} />
+        <Route path="/landing" element={<MainLandingPage />} />
       </Routes>
+
       <Footer />
     </BrowserRouter> 
 
 
 
   );
-
 }
 
 export default App;
