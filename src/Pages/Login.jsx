@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 
 function HandleLogin() {
     return (
-        <div className="bg-[#032147] p-5 min-h-screen flex items-center justify-center">
+        <div className=" p-5 min-h-screen flex items-center justify-center">
             <div className="flex flex-col items-center bg-white w-full max-w-md mx-3 
-        sm:mx-auto rounded-xl p-6 sm:p-8 shadow-md border border-gray-200">
+        sm:mx-auto rounded-xl p-6 sm:p-8 border border-gray-200 shadow-[1px_1px_1px_2px] shadow-[#00000054]">
 
                 {/* Logo and Title */}
                 <div className="flex flex-col sm:flex-row sm:items-center mb-6 gap-4 sm:gap-5 w-full justify-center">

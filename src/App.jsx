@@ -2,8 +2,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
 import AboutUs from "./Pages/About";
-import MainDesign from "./MainDesign";
-import Searchgroup from "./Searchgroup";
+import Footer from "./Pages/Footer"
+import MainLandingPage from "./Pages/MainLandingPage"
+import ShortReport from "./Pages/shortReport"
+import { Navigation } from "./Pages/navigation"
+import SkillsExplorer from './Pages/SearchSkills'
+import  OccupationsExplorer from './Pages/SearchOccupations'
+import SearchAndOccupations from './Pages/skillsAndOccupa'
+
+
+
 
 function App() {
   return (
@@ -11,17 +19,18 @@ function App() {
     <>
       <Router>
         <Routes>
+          
           <Route path="/searchgroup" element={<Searchgroup/>}></Route>
           <Route path="/main_design" element={<MainDesign/>}></Route>
           <Route path="/login" element={<HandleLogin />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs />} />
+          <Route path="/About" element={<AboutUs/>}/>
 
         </Routes>
       </Router>
 
-
+     
     </>
   );
 }
