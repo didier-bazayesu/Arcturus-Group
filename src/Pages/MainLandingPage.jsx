@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 export default function MainLandingPage() {
   return (
     <>
+
+      <section className="relative bg-[#0047AB] text-white py-20 ">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl">
+            Tabiya connects people, skills, and opportunities through an inclusive taxonomy that recognizes both formal and informal work.
+          </p>
+        </div>
+      </section>
+      <br />
     <div className="mx-auto p-6 bg-white space-y-10 lg:p-20" >
     <motion.div
     initial = {{opacity:0, x:10}}

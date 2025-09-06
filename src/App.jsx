@@ -14,6 +14,7 @@ import ExploreTool from './Component/exploreTool';
 import Searchgroup from './Pages/Searchgroup';   // make sure exported correctly
 import MainDesign from './Pages/MainDesign';     // add if you have it
 import ConnectPart from './Component/ConnectPart'
+
 function App() {
   return (
     <Router>
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" element={<Navigate to="/login " />} />
         <Route path="/login" element={<HandleLogin />} />
         <Route path="/signup" element={<HandleSignUp />} />
-        <Route path="/about" element={<MainLandingPage />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/report" element={<ShortReport />} />
         <Route path="/main_design" element={<MainDesign />} />
         <Route path="/searchgroup" element={<Searchgroup />} />
