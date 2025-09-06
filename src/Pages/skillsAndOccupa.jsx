@@ -86,15 +86,6 @@ const SearchAndOccupations = () => {
           </div>
           <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
 
-        <div className="w-full grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-          <div className="bg-white dark:bg-white p-6 rounded-2xl shadow-lg md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
-              <span className="text-[#177C50]">Occupation:</span> {occupation.label}
-            </h2>
-            <p className="text-gray-800 dark:text-gray-700">
-              {occupation.description || 'No description available.'}
-            </p>
-          </div>
           <div className="bg-white p-6 rounded-2xl shadow-lg">
 
             <h3 className="text-xl font-bold mb-4">
@@ -106,7 +97,7 @@ const SearchAndOccupations = () => {
 
                   <li key={skill.ID} className="text-gray-900 dark:text-gray-900">
 
-                  <li key={skill.ID} className="text-gray-700 dark:text-[#032147]">
+                
 
                     <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                   </li>
@@ -167,6 +158,7 @@ const SearchAndOccupations = () => {
         </div>
       );
     } else { // searchType === 'skill'
+
       const { label, description, occupations, relatedSkills } = selectedItem;
       const isEssential = (type) => type === 'essential' ? 'text-green-500' : 'text-yellow-500';
       return (
@@ -221,7 +213,7 @@ const SearchAndOccupations = () => {
 
   return (
 
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-900 p-8 flex flex-col items-center font-sans">
+   
 
     <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
 
