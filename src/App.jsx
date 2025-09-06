@@ -10,6 +10,7 @@ import SkillsExplorer from './Pages/SearchSkills'
 import  OccupationsExplorer from './Pages/SearchOccupations'
 import SearchAndOccupations from './Pages/skillsAndOccupa'
 import Dashboard from './Pages/dashboard'
+import ExploreTool from './Component/exploreTool'
 
 
 
@@ -18,7 +19,7 @@ function App() {
 
   return (
     
-  <Dashboard />
+  <ExploreTool  />
    
 
 
