@@ -1,8 +1,8 @@
 import React from 'react'
-import screenshoot from './assets/screenshoot.png'
-import mission from './assets/mision.avif'
+import screenshoot from '../assets/screenshoot.png'
+import mission from '../assets/mision.avif'
 import { motion } from "framer-motion";
-import download  from './assets/a.jpeg' 
+import download  from '../assets/a.jpeg' 
 
 
 function MainDesign() {
