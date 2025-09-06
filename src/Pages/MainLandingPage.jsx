@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 import download from '../assets/Rectangle 4.png'
 import download1 from '../assets/mision.avif'
@@ -7,7 +8,7 @@ import picture from '../assets/Clip path group.png';
 
 
 
-export default function AboutUs() {
+export default function MainLandingPage() {
   return (
     <div className="overflow-x-hidden"> {/* Add this wrapper to prevent horizontal scroll */}
       <div className="  sm:px-6  "> {/* Add consistent padding */}
@@ -24,7 +25,8 @@ export default function AboutUs() {
           initial={{ opacity: 0, y: 0 }}
           whileInView={{ opacity: 1, y: 10 }}
           transition={{ duration: 0.5 }}
-        ><br />
+        >
+          <br />
           <section className="relative bg-[#0047AB] text-white py-20 ">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>

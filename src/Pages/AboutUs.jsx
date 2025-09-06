@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function MainLandingPage() {
+export default function AboutUs() {
   return (
     <>
     <div className="mx-auto p-6 bg-white space-y-10 lg:p-20" >

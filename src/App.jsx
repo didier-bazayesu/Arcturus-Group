@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
-import AboutUs from "./Pages/MainLandingPage1";
+import AboutUs from "./Pages/AboutUs";
 import Footer from "./Pages/Footer"
-import MainLandingPage from "./Pages/AboutUs"
+import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SkillsExplorer from './Pages/SearchSkills'
@@ -19,7 +19,7 @@ import ConnectPart from './Component/ConnectPart'
 function App() {
   return (
 
- <AboutUs />
+ <MainLandingPage />
 
 
 
