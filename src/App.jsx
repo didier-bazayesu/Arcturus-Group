@@ -24,7 +24,7 @@ function App() {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/signup" element={<HandleSignUp />} />
           <Route path="/About" element={<AboutUs/>}/>
-          <Route path="/Report" element={<ShortReport />} />
+          <Route path="/Report" element={<SkillsExplorer />} />
           <Route path="/about" element={<MainLandingPage />} />
       </Routes>
       <Footer/> 
