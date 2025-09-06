@@ -7,7 +7,7 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SearchAndOccupations from './Pages/skillsAndOccupa'
-import ESCOMapExplorer from "./Pages/chat";
+import ESCOMapExplorer from "./Pages/map";
 
 
 
@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
     <Navigation />
       <Routes>
-        <Route path="/Home" element={<ShortReport />} />
+        <Route path="/Home" element={<ESCOMapExplorer />} />
         <Route path="/Report" element={<ShortReport />} />
         <Route path="/Explore" element={<SearchAndOccupations />} />
         
