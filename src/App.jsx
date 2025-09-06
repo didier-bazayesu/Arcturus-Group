@@ -32,11 +32,12 @@ export default App;
 {/* <BrowserRouter>
       <Navigation />
 
+
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/login " />} />
         <Route path="/login" element={<HandleLogin />} />
         <Route path="/signup" element={<HandleSignUp />} />
-        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about" element={<MainLandingPage />} />
         <Route path="/report" element={<ShortReport />} />
         <Route path="/main_design" element={<MainDesign />} />
         <Route path="/searchgroup" element={<Searchgroup />} />
