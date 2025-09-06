@@ -10,6 +10,7 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SearchAndOccupations from './Pages/skillsAndOccupa'
+import SkillsExplorer from './Pages/SearchSkills'
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   return (
 
  
-<SearchAndOccupations />
+<SkillsExplorer />
     
   );
 
