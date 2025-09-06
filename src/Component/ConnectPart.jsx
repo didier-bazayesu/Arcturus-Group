@@ -10,6 +10,68 @@ export default function ConnectPart (){
                      infrastructure for youth employment, we’d love to connect.
                 </p>
             </div>
+            
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center py-16">
+        
+        <div className="flex flex-col items-center space-y-4">
+          <h2 className="text-xl font-semibold">Request A Demo</h2>
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Ben Savonen"
+            className="w-28 h-28 rounded-full object-cover"
+          />
+          <div>
+            <h3 className="font-bold">Ben Savonen</h3>
+            <p className="text-gray-300">Director, Innovation</p>
+            <a
+              href="mailto:ben@example.com"
+              className="hover:underline mt-2 inline-block"
+            >
+              Email Ben
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center space-y-4">
+          <h2 className="text-xl font-semibold">Partner With Tabiya</h2>
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Nyambura Kariuki"
+            className="w-28 h-28 rounded-full object-cover"
+          />
+          <div>
+            <h3 className="font-bold">Nyambura Kariuki</h3>
+            <p className="text-gray-300">Director, Community</p>
+            <a
+              href="mailto:nyambura@example.com"
+              className=" hover:underline mt-2 inline-block"
+            >
+              Email Nyambura
+            </a>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center space-y-4">
+          <h2 className="text-xl font-semibold">General Inquiries</h2>
+          <img
+            src="https://via.placeholder.com/150"
+            alt="Christian Meyer"
+            className="w-28 h-28 rounded-full object-cover"
+          />
+          <div>
+            <h3 className="font-bold">Christian Meyer</h3>
+            <p className="text-gray-300">CEO and Co-Founder</p>
+            <a
+              href="mailto:christian@example.com"
+              className="hover:underline mt-2 inline-block"
+            >
+              Email Christian
+            </a>
+          </div>
+        </div>
+        
+      </div>
+  
 
         </section>
         
