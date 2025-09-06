@@ -6,16 +6,25 @@ import Footer from "./Pages/Footer"
 import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
+import SkillsExplorer from './Pages/SearchSkills'
+import  OccupationsExplorer from './Pages/SearchOccupations'
 import SearchAndOccupations from './Pages/skillsAndOccupa'
+
 
 
 
 function App() {
 
   return (
-    <>
-    {/* <BrowserRouter>
+
+    
+  <BrowserRouter>
+      <Navigation />
+
+ 
+    {<BrowserRouter>
     <Navigation />
+
       <Routes>
         <Route path="/Home" element={<ShortReport />} />
         <Route path="/Report" element={<ShortReport />} />
@@ -28,13 +37,16 @@ function App() {
         <Route path="/about" element={<MainLandingPage />} />
       </Routes>
     <Footer/> 
-    </BrowserRouter> */}
-    <SearchAndOccupations />
+    </BrowserRouter>}
+  
 
-    </>
 
   );
 
 }
 
 export default App;
+
+ 
+
+ 

@@ -73,22 +73,22 @@ const OccupationsExplorer = () => {
 
     return (
       <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:col-span-2">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg md:col-span-2">
+          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-pink-500">
             <span className="text-blue-600">Occupation:</span> {occupation.label}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-700 dark:text-gray-700">
             {occupation.description || 'No description available.'}
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-green-600">Essential Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {requiredSkills.length > 0 ? (
               requiredSkills.map(skill => (
-                <li key={skill.ID} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.ID} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                 </li>
               ))
@@ -97,14 +97,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-yellow-600">Optional Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {optionalSkills.length > 0 ? (
               optionalSkills.map(skill => (
-                <li key={skill.ID} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.ID} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                 </li>
               ))
@@ -113,14 +113,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-purple-600">Related Occupations</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {relatedOccupations.length > 0 ? (
               relatedOccupations.map(occ => (
-                <li key={occ.id} className="text-gray-700 dark:text-gray-300">
+                <li key={occ.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{occ.label}</span>
                 </li>
               ))
@@ -129,14 +129,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-orange-600">Related Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {relatedSkills.length > 0 ? (
               relatedSkills.map(skill => (
-                <li key={skill.id} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.label}</span>
                 </li>
               ))
@@ -150,7 +150,7 @@ const OccupationsExplorer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 p-8 flex flex-col items-center font-sans">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-300 text-gray-900 dark:text-gray-400 p-8 flex flex-col items-center font-sans">
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -165,8 +165,8 @@ const OccupationsExplorer = () => {
         `}
       </style>
       <script src="https://cdn.tailwindcss.com"></script>
-      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 mb-8">
-        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-100">
+      <div className="w-full max-w-4xl bg-white dark:bg-gray-100 shadow-xl rounded-2xl p-8 mb-8">
+        <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900 dark:text-gray-500">
           Occupations Explorer
         </h1>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
@@ -178,7 +178,7 @@ const OccupationsExplorer = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search for an occupation..."
-            className="flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white dark:bg-gray-700 placeholder-gray-500 dark:placeholder-gray-400"
+            className="text-gray-200 flex-grow p-4 rounded-full border-2 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors bg-white dark:bg-gray-600 placeholder-gray-500 dark:placeholder-gray-400"
           />
         </div>
       </div>
@@ -197,15 +197,15 @@ const OccupationsExplorer = () => {
 
       {/* Search results list */}
       {searchResults.length > 0 && !selectedOccupation && (
-        <div className="w-full max-w-4xl bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+        <div className="w-full max-w-4xl bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg mt-8 animate-fade-in">
+          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-blue-800">
             Search Results
           </h2>
           <ul className="list-disc pl-5 space-y-2">
             {searchResults.map(item => (
               <li 
                 key={item.id} 
-                className="text-gray-700 dark:text-gray-300 cursor-pointer hover:underline"
+                className="text-gray-700 dark:text-gray-700 cursor-pointer hover:underline"
                 onClick={() => fetchOccupationDetails(item.id)}
               >
                 <span className="font-semibold">{item.label}</span>
