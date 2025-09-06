@@ -11,6 +11,7 @@ import OccupationsExplorer from './Pages/SearchOccupations'
 import SearchAndOccupations from './Pages/skillsAndOccupa'
 import Dashboard from './Pages/dashboard'
 import ExploreTool from './Component/exploreTool'
+import ConnectPart from './Component/ConnectPart'
 
 
 
@@ -19,7 +20,8 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+
+<BrowserRouter>
       <Navigation />
       <Routes>
         <Route path="/Home" element={<AboutUs />}></Route>
@@ -30,7 +32,7 @@ function App() {
         <Route path="/About" element={<MainLandingPage />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </BrowserRouter> 
 
 
 
@@ -39,5 +41,5 @@ function App() {
 }
 
 export default App;
-
+    
 
