@@ -6,7 +6,7 @@ const HomePage = () => {
       {/* Header */}
       <header className="w-[95%] mx-auto py-4 flex items-center justify-between">
         <img
-          src="./images/tabiya-logo.png"
+          src="../src/Pages/img/tabiya-logo-dm-color 1.png"
           alt="Tabiya Logo"
           className="h-10"
         />
