@@ -7,7 +7,7 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SkillsExplorer from './Pages/SearchSkills'
-import  OccupationsExplorer from './Pages/SearchOccupations'
+import OccupationsExplorer from './Pages/SearchOccupations'
 import SearchAndOccupations from './Pages/skillsAndOccupa'
 
 
@@ -16,20 +16,20 @@ import SearchAndOccupations from './Pages/skillsAndOccupa'
 function App() {
 
   return (
-    
-  <BrowserRouter>
+
+    <BrowserRouter>
       <Navigation />
       <Routes>
-           <Route path="/Home" element={<AboutUs/>}></Route>
-          <Route path="/login" element={<HandleLogin />} />
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/Report" element={<ShortReport />} />
-          <Route path="/About" element={<MainLandingPage />} />
+        <Route path="/Home" element={<AboutUs />}></Route>
+        <Route path="/login" element={<HandleLogin />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/signup" element={<HandleSignUp />} />
+        <Route path="/Report" element={<ShortReport />} />
+        <Route path="/About" element={<MainLandingPage />} />
       </Routes>
-      <Footer/> 
+      <Footer />
     </BrowserRouter>
-   
+
 
 
   );
@@ -38,6 +38,5 @@ function App() {
 
 export default App;
 
- 
 
- 
+
