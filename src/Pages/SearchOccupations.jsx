@@ -81,14 +81,14 @@ const OccupationsExplorer = () => {
             {occupation.description || 'No description available.'}
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-green-600">Essential Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {requiredSkills.length > 0 ? (
               requiredSkills.map(skill => (
-                <li key={skill.ID} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.ID} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                 </li>
               ))
@@ -97,14 +97,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-yellow-600">Optional Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {optionalSkills.length > 0 ? (
               optionalSkills.map(skill => (
-                <li key={skill.ID} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.ID} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.PREFERREDLABEL}</span>: {skill.DEFINITION}
                 </li>
               ))
@@ -113,14 +113,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-purple-600">Related Occupations</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {relatedOccupations.length > 0 ? (
               relatedOccupations.map(occ => (
-                <li key={occ.id} className="text-gray-700 dark:text-gray-300">
+                <li key={occ.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{occ.label}</span>
                 </li>
               ))
@@ -129,14 +129,14 @@ const OccupationsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-orange-600">Related Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {relatedSkills.length > 0 ? (
               relatedSkills.map(skill => (
-                <li key={skill.id} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.label}</span>
                 </li>
               ))
