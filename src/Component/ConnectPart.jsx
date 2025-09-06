@@ -1,3 +1,6 @@
+import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 export default function ConnectPart (){
     return (
         <>
@@ -72,7 +75,79 @@ export default function ConnectPart (){
         
       </div>
   
+    <div className=" py-12">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div className="space-y-4 [&>*]:underline [&>*]:hover:underline">
+          <a href="#" className="block  font-semibold">
+            The Latest
+          </a>
+          <a href="#" className="block">
+            Technology Documentation
+          </a>
+          <a href="#" className="block ">
+            Terms & Privacy
+          </a>
+          <a href="#" className="block ">
+            Compass Terms & Privacy
+          </a>
+        </div>
 
+        <div className="space-y-4">
+          <p>
+            Tabiya c/o GDIS, 1401 K Street NW Suite 900 <br />
+            Washington, DC 20005, <br />
+            United States
+          </p>
+          <a
+            href="mailto:hi@tabiya.org"
+            className="font-semibold underline"
+          >
+            hi@tabiya.org
+          </a>
+        </div>
+        <div className="space-y-4">
+             <div className="space-y-4 text-center md:text-left">
+            <div className="flex justify-center md:justify-center space-x-6 text-2xl text-green-400">
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-300"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-300"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
+           <div className="text-sm text-gray-300">
+            <p>© Copyright 2025 Tabiya.</p>
+            <p>
+              Photography by Fiseha Adugnaw, Barry Christianson, and Santiago
+              Tascon for Tabiya.
+            </p>
+          </div>
+        
+        </div>
+        
+        </div>
+
+       
+     
+      
+
+        
+
+      </div>
+
+    </div>
+    
         </section>
         
         </>
