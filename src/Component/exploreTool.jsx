@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ExploreTool = ({ title, description, icon }) => {
+const Card = ({ title, description, icon }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
       {/* Icon */}
@@ -12,14 +12,14 @@ const ExploreTool = ({ title, description, icon }) => {
       {/* Description */}
       <p className="text-gray-600 mb-6">{description}</p>
       {/* Button */}
-      <a href="#" className="w-full text-white font-semibold py-3 px-6 rounded-full transition-transform transform hover:scale-105 bg-gradient-to-r from-pink-500 to-orange-500 shadow-md hover:shadow-lg">
+      <a href="#" className="w-full text-white font-semibold py-3 px-6 rounded-full transition-transform transform hover:scale-105 bg-gradient-to-r from-green-500 to-blue-600  shadow-md hover:shadow-lg">
         Click Here
       </a>
     </div>
   );
 };
 
-const App = () => {
+const ExploreTool = () => {
   const cardsData = [
     {
       title: "Occupation Decoder",
@@ -61,7 +61,7 @@ const App = () => {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center py-16 px-4 font-sans">
+    <div className="bg-gray-300 min-h-screen flex items-center justify-center py-16 px-4 font-sans">
       {/* Main Container */}
       <div className="w-full max-w-7xl">
         {/* Header Title */}
