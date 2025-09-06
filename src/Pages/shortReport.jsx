@@ -11,7 +11,6 @@ const data = [
   { date: 'Jun', current: 2390, goal: 9800 },
   { date: 'Jul', current: 9800, goal: 9800 },
 ];
-console.log(motion)
 export default function ShortReport(){
   return (
     <>

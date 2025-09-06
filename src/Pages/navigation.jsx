@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 export function Navigation(){
   const [open, setOpen] = useState(true)
-  const [account, setAccount] = useState(false) // Changed to false initially
+  const [account, setAccount] = useState(false)
   
   const handleClick = () => {
     setOpen(!open)
@@ -31,7 +31,6 @@ export function Navigation(){
   const handleBackdropClick = () => {
     setAccount(false)
   }
-  console.log(motion)
   
   return(
     <>
