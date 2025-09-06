@@ -74,22 +74,22 @@ const SkillsExplorer = () => {
 
     return (
       <div className="w-full max-w-4xl grid gap-8 md:grid-cols-2 mt-8 animate-fade-in">
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg md:col-span-2">
-          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg md:col-span-2">
+          <h2 className="text-2xl font-bold mb-4 border-b-2 pb-2 text-pink-500">
             <span className="text-blue-600">Skill:</span> {label}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-700 dark:text-gray-700">
             {description || 'No description available.'}
           </p>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-purple-600">Occupations Requiring This Skill</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {occupations.length > 0 ? (
               occupations.map(occ => (
-                <li key={occ.id} className="text-gray-700 dark:text-gray-300">
+                <li key={occ.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{occ.label}</span>
                   <span className={`text-sm font-semibold ml-2 ${isEssential(occ.type)}`}>
                       ({occ.type})
@@ -101,14 +101,14 @@ const SkillsExplorer = () => {
             )}
           </ul>
         </div>
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="bg-white dark:bg-gray-100 p-6 rounded-2xl shadow-lg">
           <h3 className="text-xl font-bold mb-4">
             <span className="text-orange-600">Related Skills</span>
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             {relatedSkills.length > 0 ? (
               relatedSkills.map(skill => (
-                <li key={skill.id} className="text-gray-700 dark:text-gray-300">
+                <li key={skill.id} className="text-gray-700 dark:text-gray-700">
                   <span className="font-semibold">{skill.label}</span>
                 </li>
               ))
