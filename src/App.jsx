@@ -16,28 +16,20 @@ import SearchAndOccupations from './Pages/skillsAndOccupa'
 function App() {
 
   return (
-
     
-  
-
- 
-    <BrowserRouter>
-    <Navigation />
-
+  <BrowserRouter>
+      <Navigation />
       <Routes>
-        <Route path="/Home" element={<ShortReport />} />
-        <Route path="/Report" element={<ShortReport />} />
-        <Route path="/about" element={<MainLandingPage />} />
-        <Route path="/login" element={<HandleLogin />} />
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/signup" element={<HandleSignUp />} />
-        <Route path="/About" element={<AboutUs/>}/>
-        <Route path="/Report" element={<ShortReport />} />
-        <Route path="/about" element={<MainLandingPage />} />
+          <Route path="/login" element={<OccupationsExplorer />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/signup" element={<HandleSignUp />} />
+          <Route path="/About" element={<AboutUs/>}/>
+          <Route path="/Report" element={<SkillsExplorer />} />
+          <Route path="/about" element={<MainLandingPage />} />
       </Routes>
-    <Footer/> 
+      <Footer/> 
     </BrowserRouter>
-  
+   
 
 
   );
