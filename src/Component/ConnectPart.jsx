@@ -81,6 +81,7 @@ export default function ConnectPart (){
         <div className="space-y-4 [&>*]:underline [&>*]:hover:underline">
           <a href="#" className="block  font-semibold">
             The Latest
+            <h1>helloooooooooooooooooo</h1>
           </a>
           <a href="#" className="block">
             Technology Documentation
