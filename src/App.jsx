@@ -1,19 +1,21 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
-import AboutUs from "./Pages/About";
-import Footer from "./Pages/Footer";
-import MainLandingPage from "./Pages/MainLandingPage";
-import ShortReport from "./Pages/shortReport";
-import { Navigation } from "./Pages/navigation";
-import SkillsExplorer from './Pages/SearchSkills';
-import OccupationsExplorer from './Pages/SearchOccupations';
-import SearchAndOccupations from './Pages/skillsAndOccupa';
-import Dashboard from './Pages/dashboard';
-import ExploreTool from './Component/exploreTool';
-import Searchgroup from './Pages/Searchgroup';   // make sure exported correctly
-import MainDesign from './Pages/MainDesign';     // add if you have it
+import AboutUs from "./Pages/AboutUs";
+import Footer from "./Pages/Footer"
+import MainLandingPage from "./Pages/MainLandingPage"
+import ShortReport from "./Pages/shortReport"
+import { Navigation } from "./Pages/navigation"
+import SkillsExplorer from './Pages/SearchSkills'
+import OccupationsExplorer from './Pages/SearchOccupations'
+import SearchAndOccupations from './Pages/skillsAndOccupa'
+import Dashboard from './Pages/dashboard'
+import ExploreTool from './Component/exploreTool'
 import ConnectPart from './Component/ConnectPart'
+import MainDesign from "./Pages/MainDesign";
+import Searchgroup from "./Pages/Searchgroup";
+
+
 
 function App() {
   return (

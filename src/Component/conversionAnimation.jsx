@@ -40,11 +40,12 @@ const ConversionAnimation = () => {
       { y: 10, duration: 1.5, ease: "sine.inOut", repeat: -1, yoyo: true, delay: 0.5 }
     );
   }, []);
+  console.log('barinda')
 
   return (
     <div
       ref={container}
-      className="flex flex-col items-center justify-center min-h-screen bg-gray-300 text-white p-4 font-sans"
+      className="flex flex-col items-center justify-center bg-gray-300 text-white p-4 font-sans"
     >
       <div className=" border flex flex-col md:flex-row justify-between items-center w-full max-w-6xl shadow-2xl rounded-2xl bg-blue-700">
         {/* Job Seeker */}
