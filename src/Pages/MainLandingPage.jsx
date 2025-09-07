@@ -1,134 +1,176 @@
-import React from "react";
 import { motion } from "framer-motion";
+import ConversionAnimation from '../Component/conversionAnimation'
+import download from '../assets/Rectangle 4.png'
+import download1 from '../assets/mision.avif'
+import ExploreTool from '../Component/exploreTool'
+import ConnectPart from '../Component/ConnectPart'
+import picture from '../assets/Clip path group.png';
+import MainDesign from '../Component/MainDesign'
+import SearchAndOccupations from './skillsAndOccupa'
+
+
+
 
 export default function MainLandingPage() {
   return (
     <>
-    <div className="mx-auto p-6 bg-white space-y-10 lg:p-20" >
-    <motion.div
-    initial = {{opacity:0, x:10}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-      <div className="p-6 ">
-        <p className="text-center text-[#032147] text-sm sm:text-md lg:text-lg">
-          Tabiya builds open-source software and standards to unlock economic opportunity 
-          for all. We partner with government employment services, NGOs, and job platforms to 
-          create pathways that recognize skills from all work – including informal and 
-          traditionally unseen activities. Our mission is to make labor markets more efficient, 
-          equitable, and inclusive.
-        </p>
-      </div>
-      </motion.div>
-      <div className='lg:grid lg:gap-2 lg:justify-center items-center space-y-10'>
-          <motion.div
-    initial = {{opacity:0, x:10}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-      <div className="bg-[#D9D9D9] p-10 rounded-2xl shadow-[1px_2px_3px] space-y-10">
-        <h2 className='text-[#032147] text-sm sm:text-md lg:text-lg  text-center font-bold'>What We Do </h2>
-        <h2 className='text-sm sm:text-md lg:text-lg text-[#032147] text-center font-bold'>Addressing the challenge with open-source</h2>
-        <p className=' mt-4 text-sm sm:text-md lg:text-md'>
-            The youth workforce is growing, especially in low- and middle-income countries. Millions of people gain skills informally, 
-            yet labor markets often don't often recognize their value, creating barriers to participation. Technology could help,
-             but current solutions are expensive, proprietary, and create fragmented systems that overlook informal skills and prevent 
-             data sharing. We're on a mission to change that.
-            At Tabiya, we're building digital public infrastructure for jobs—creating open-source technology that organizations can freely 
-            adapt to create more efficient, equitable labor markets.
-        </p>
+    
+        <ExploreTool />
+     <ConversionAnimation />
+    <div className="overflow-x-hidden"> {/* Add this wrapper to prevent horizontal scroll */}
+     <SearchAndOccupations />
 
-
-      </div>
+      <div className="bg-gray-50 text-gray-800">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 0 }}
+          whileInView={{ opacity: 1, y: 10 }}
+          transition={{ duration: 0.5 }}
+        >
+          <br />
+          
         </motion.div>
-         <motion.div
-    initial = {{opacity:0, x:-20}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-        <div className="bg-[#D9D9D9] p-10 rounded-2xl shadow-[1px_2px_3px] space-y-10">
-        <h2 className='text-[#032147] text-sm sm:text-md lg:text-lg text-center font-bold'>The Impact</h2>
-        <h2 className='text-sm sm:text-md lg:text-lg text-[#032147]  text-center font-bold'>5 million jobseekers impacted by our work - and we’re just getting started</h2>
-        <p className=' mt-4 text-sm sm:text-md lg:text-md'>
-            The youth workforce is growing, especially in low- and middle-income countries. Millions of people
-             gain skills informally, yet labor markets often don't often recognize their value,
-              creating barriers to participation. Technology could help, but current solutions are expensive,
-               proprietary, and create fragmented systems that overlook informal skills and prevent data sharing. 
-               We're on a mission to change that.
-            At Tabiya, we're building digital public infrastructure for jobs—creating open-source technology that 
-            organizations can freely adapt to create more efficient, equitable labor markets.
-        </p>
 
+        {/* Interactive Navigation Map Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+      
+          <section className="py-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#0047AB]">Explore Career Pathways</h2>
+                <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-600">
+                  Navigate through occupation categories, discover specific careers, and explore the skills the market demands.
+                  Each level provides deeper insights into the world of work.
+                </p>
+              </div>
 
-      </div>
-      </motion.div>
-      </div>
-
-      <div className='grid justify-center items-center  grid-cols-2 sm:grid-cols-3 lg:gap-1   gap-10 sm:gap-2 [&>*]:rounded-[10px] [&>*]:text-center [&>*]:w-[168px] [&>*]:h-[120px] lg:mt-20 lg:pl-25   sm:pl-20'>
-         <motion.div className="bg-[#D9D9D9]"
-    initial = {{opacity:0, x:10}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-        <div className=' text-[#2B7669]'>
-            <h3  className='mt-8 font-bold'>Pilot</h3>
-            <p className='font-bold'>3</p>
-        </div>
+            </div>
+          </section>
         </motion.div>
-         <motion.div className="bg-[#032147]"
-    initial = {{opacity:0, x:10}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-        <div className=' text-white'>
-            <h3 className='mt-8 font-bold'>Relationships</h3>
-            <p className='font-bold'>3,689</p>
-        </div>
-        </motion.div>
-         <motion.div className="bg-[#D9D9D9]"
-    initial = {{opacity:0, x:10}}
-    whileInView = {{opacity:1, x:0}}
-    transition={{duration:0.8}}
-    >
-        <div className=' text-[#2B7669]'>
-            <h3  className='mt-8 font-bold'>Control trials</h3>
-            <p className='font-bold'>100%</p>
-        </div>
-        </motion.div>
-      </div>
-       <motion.div
-    initial = {{opacity:0, height:600}}
-    whileInView = {{opacity:1, height:700}}
-    transition={{duration:0.8}}
-    >
-      <div className='text-[#032147] text-center lg:space-y-10'>
-          <h2 className=' text-sm sm:text-md lg:text-lg font-bold lg:mt-20'>The Impact</h2>
-        <h2 className='text-sm sm:text-md lg:text-lg font-bold'>5 million jobseekers impacted by our work - and we’re just getting started</h2>
-        <div className='grid justify-center items-center grid-cols-1 md:grid-cols-2 text-lg sm:text-md lg:text-lg lg:gap-10 sm:gap-8   sm:pl-10 space-y-10'>
-        <div className=''>
-            <h3  className='mt-8 font-bold'>3</h3>
-            <p className=''>Pilot programs in 3 countries around the 
-                world including South Africa, Kenya, and Ethiopia.</p>
-        </div>
-        <div className=''>
-            <h3 className='mt-8 font-bold'>3,689</h3>
-            <p className=''>
-            Relationships in our taxonomy between skills from unpaid 
-            work and formal sector occupations.
-            </p>
-        </div>
-        <div className=''>
-            <h3  className='mt-8 font-bold'>100%</h3>
-            <p className=''>
-                All parts of our tech stack are currently 
-                being evaluated using randomized control trials.
-            </p>
-        </div>
-      </div>
-      </div>
-      </motion.div>
 
+        {/* Who We Are */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="w-full h-64 md:h-80 flex items-center justify-center rounded-xl overflow-hidden">
+                <img src={download} alt="" className="w-full h-full object-cover" />
+              </div>
+            </motion.div>
+
+            {/* Text */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#0047AB]">Who We Are</h2>
+                <p className="mb-4 text-base md:text-lg">
+                  We are dedicated to building an open data ecosystem where skills and occupations are mapped, organized, and made accessible to everyone.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Our Mission */}
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <section className="py-16 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#00A99D]">Our Mission</h2>
+              <div className="w-fulll  text-base md:text-lg space-y-6 ">
+                <p className="border border-black p-5 rounded-2xl bg-[#37b0a0] text-white ">
+                  Tabiya builds open-source software and standards to unlock economic opportunity
+                  for all. We partner with government employment services, NGOs, and job platforms
+                  to create pathways that recognize skills from all work – including informal and
+                  traditionally unseen activities.
+                  Our mission is to make labor markets more efficient, equitable, and inclusive.
+                </p>
+
+                <p className="border border-black p-5 rounded-2xl bg-[#37b0a0] text-white">
+                  The youth workforce is growing, especially in low-
+                  and middle-income countries. Millions of people gain skills informally,
+                  yet labor markets often don't often recognize their value, creating barriers
+                  to participation. Technology could help, but current solutions are expensive,
+                  proprietary, and create fragmented systems that overlook informal skills and
+                  prevent data sharing. We're on a mission to change that.
+                  At Tabiya, we're building digital public infrastructure for jobs—creating open-source
+                  technology that organizations can freely adapt to create more efficient, equitable
+                  labor markets.
+                </p>
+              </div>
+            </div>
+          </section>
+        </motion.div>
+
+        {/* Our Values with Image */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Text */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 text-[#FF7A00]">Our Values</h2>
+                <p className="mb-4 text-base md:text-lg">
+                  Inclusion, transparency, and collaboration are at the core of everything we do.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="w-full h-64 md:h-80 flex items-center justify-center rounded-xl overflow-hidden">
+                <img src={download1} className="w-full h-full object-cover" alt="" />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <section className="py-16 bg-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#0047AB]">Where We Work</h2>
+              {/* Map */}
+              <div className="w-full h-64 md:h-96 flex items-center justify-center rounded-xl overflow-hidden">
+                <img src={download} alt="" className="w-full h-full object-cover" />
+              </div>
+            
+            </div>
+          </section>
+         
+        </motion.div>
+         
+      </div>
+      
     </div>
+     
+    <ConnectPart />
     </>
+    
   );
 }

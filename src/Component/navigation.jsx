@@ -1,17 +1,17 @@
 import { motion } from "framer-motion"
 import { useState } from "react"
 
-import booklet from './img/Spiral Bound Booklet.png';
-import close from "./img/Close.png"
-import logo from "./img/tabiya-logo-dm-color 1.png"
-import menu from "./img/menu.png"
-import dashboard from "./img/Dashboard Layout.png"
-import personG from "./img/Person-g.png"
-import person from "./img/Person.png"
-import logout from './img/Logout.png';
+import booklet from '../Pages/img/Spiral Bound Booklet.png';
+import close from "../Pages/img/Close.png"
+import logo from "../Pages/img/tabiya-logo-dm-color 1.png"
+import menu from "../Pages/img/menu.png"
+import dashboard from "../Pages/img/Dashboard Layout.png"
+import personG from "../Pages/img/Person-g.png"
+import person from "../Pages/img/Person.png"
+import logout from '../Pages/img/Logout.png';
 import { Link } from "react-router-dom";
 
-export function Navigation(){
+export default function Navigation(){
   const [open, setOpen] = useState(true)
   const [account, setAccount] = useState(false)
   
