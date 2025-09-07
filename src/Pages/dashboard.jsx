@@ -92,7 +92,7 @@ const Dashboard = () => {
 
       {/* Explore button */}
       <div className="flex justify-center items-center bg-[#032147] text-white text-lg md:text-xl mt-10 w-[90%] md:w-[50%] lg:w-[30%] h-16 mx-auto mb-10 rounded-2xl cursor-pointer hover:bg-blue-900 transition">
-        <p>Explore Yourself</p>
+        <p>Explore Yourself barinda </p>
       </div>
 
       {/* Tailwind custom animation */}
