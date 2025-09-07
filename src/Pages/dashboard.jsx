@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Rect from './img/Rectangle.jpg'
+
 
 const Dashboard = () => {
   const [popupText, setPopupText] = useState("Welcome!");
@@ -22,26 +24,18 @@ const Dashboard = () => {
   return (
     <div className="m-0 p-0 font-sans">
       {/* Header */}
-      <header className="w-[95%] h-[50px] lg:h-[60px] mx-auto mt-6 flex items-center gap-4">
-        {/* Logo */}
-        <img
-          src="../src/Pages/img/tabiya-logo-dm-color 1.png"
-          alt="tabiya logo"
-          className="h-8 lg:h-10 mr-auto"
-        />
+      <header className="w-[95%] h-[50px] lg:h-[60px] mx-auto mt-6 flex items-center gap-4 text-center">
+        
 
         {/* Desktop menu */}
-        <nav className="hidden lg:flex gap-6 text-gray-800">
-          <span className="cursor-pointer hover:underline">Home</span>
-          <span className="cursor-pointer hover:underline">About Us</span>
-          <span className="cursor-pointer hover:underline">Services</span>
-          <span className="cursor-pointer hover:underline">Report</span>
+        <nav className="hidden lg:flex gap-6 text-green-950">
+          <span className="cursor-pointer hover:underline">Map Explorers</span>
+          <span className="cursor-pointer hover:underline">Compare current skills & Occupations needs </span>
+          <span className="cursor-pointer hover:underline"><Link to="/SkillsExplorer">Skills Explorer</Link></span>
+          <span className="cursor-pointer hover:underline"><Link to="/SearchOccupations">Occupations Explorer</Link> </span>
         </nav>
-
-        {/* Account button (desktop only) */}
-        <div className="hidden lg:flex bg-[#2B7669] h-[80%] px-6 items-center justify-center rounded-2xl ml-auto">
-          <p className="text-white font-medium">Account</p>
-        </div>
+     
+       
 
         {/* Mobile menu icon */}
         <img

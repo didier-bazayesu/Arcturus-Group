@@ -7,7 +7,9 @@ import MainLandingPage from "./Pages/MainLandingPage";
 import ShortReport from "./Pages/shortReport";
 import Navigation from "./Component/navigation";
 import SkillsExplorer from "./Pages/SearchSkills";
-import OccupationsExplorer from "./Pages/SearchOccupations";
+import SearchOccupations from "./Pages/SearchOccupations";
+import Dashboard from "./Pages/dashboard";
+
 
 function App() {
   return (
@@ -21,9 +23,9 @@ function App() {
         <Route path="/login" element={<HandleLogin />} />
         <Route path="/signup" element={<HandleSignUp />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/report" element={<ShortReport />} />
-        <Route path="/skills" element={<SkillsExplorer />} />
-        <Route path="/occupations" element={<OccupationsExplorer />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/SkillsExplorer" element={<SkillsExplorer />} />
+        <Route path="/SearchOccupations" element={<SearchOccupations />} />
 
         {/* 👇 Redirect unknown routes back to main landing page */}
         <Route path="*" element={<Navigate to="/" />} />
