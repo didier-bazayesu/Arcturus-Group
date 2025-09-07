@@ -88,6 +88,7 @@ export default function ConnectPart (){
           </a>
           <a href="#" className="block">
             Technology Documentation
+            <h1>Helll</h1>
           </a>
           <a href="#" className="block ">
             Terms & Privacy
