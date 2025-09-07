@@ -6,8 +6,7 @@ import ConversionAnimation from './conversionAnimation'
 export default function ConnectPart (){
     return (
         <>
-         <ConversionAnimation />
-         <ExploreTool />
+         
         <section className="bg-[#032147] text-white p-4 md:p-18 "> 
             <div className="text-center space-y-4 md:space-y-6">
                 <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold ">Let's Connect </h2>

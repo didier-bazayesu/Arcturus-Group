@@ -10,6 +10,7 @@ export default function AboutUs() {
     whileInView = {{opacity:1, x:0}}
     transition={{duration:0.8}}
     >
+
       <div className="p-6 ">
         <p className="text-center text-[#032147] text-sm sm:text-md lg:text-lg">
           Tabiya builds open-source software and standards to unlock economic opportunity 

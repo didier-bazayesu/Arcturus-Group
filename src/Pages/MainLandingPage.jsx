@@ -1,15 +1,21 @@
 import { motion } from "framer-motion";
-
+import ConversionAnimation from '../Component/conversionAnimation'
 import download from '../assets/Rectangle 4.png'
 import download1 from '../assets/mision.avif'
-
+import ExploreTool from '../Component/exploreTool'
+import ConnectPart from '../Component/ConnectPart'
 import picture from '../assets/Clip path group.png';
+import MainDesign from '../Component/MainDesign'
 
 
 
 
 export default function MainLandingPage() {
   return (
+    <>
+    
+        <ExploreTool />
+     <ConversionAnimation />
     <div className="overflow-x-hidden"> {/* Add this wrapper to prevent horizontal scroll */}
       <div className="  sm:px-6  "> {/* Add consistent padding */}
         <div className="flex  flex-row  mb-6 gap-4 sm:gap-5 max-w-7xl mt-5  sm:pb-5 justify-center ">
@@ -27,14 +33,7 @@ export default function MainLandingPage() {
           transition={{ duration: 0.5 }}
         >
           <br />
-          <section className="relative bg-[#0047AB] text-white py-20 ">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-              <p className="max-w-2xl mx-auto text-lg md:text-xl">
-                Tabiya connects people, skills, and opportunities through an inclusive taxonomy that recognizes both formal and informal work.
-              </p>
-            </div>
-          </section>
+          
         </motion.div>
 
         {/* Interactive Navigation Map Section */}
@@ -43,6 +42,7 @@ export default function MainLandingPage() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+      
           <section className="py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <div className="text-center mb-8">
@@ -164,10 +164,18 @@ export default function MainLandingPage() {
               <div className="w-full h-64 md:h-96 flex items-center justify-center rounded-xl overflow-hidden">
                 <img src={download} alt="" className="w-full h-full object-cover" />
               </div>
+            
             </div>
           </section>
+         
         </motion.div>
+         
       </div>
+      
     </div>
+     
+    <ConnectPart />
+    </>
+    
   );
 }
