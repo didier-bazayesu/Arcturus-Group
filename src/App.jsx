@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import HandleLogin from "./Pages/Login";
 import HandleSignUp from "./Pages/Signup";
 import AboutUs from "./Pages/About";
-import Footer from "./Pages/Footer"
+// import Footer from "./Pages/Footer"
 import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
@@ -13,27 +13,38 @@ import Searchgroup from "./Searchgroup";
 import MainDesign from "./MainDesign";
 
 
+import AboutUs from "./Pages/AboutUs";
+// import Footer from "./Component/Footer";
+import MainLandingPage from "./Pages/MainLandingPage";
+import ShortReport from "./Pages/shortReport";
+import Navigation from "./Component/navigation";
+import SkillsExplorer from "./Pages/SearchSkills";
+import SearchOccupations from "./Pages/SearchOccupations";
+import Dashboard from "./Pages/dashboard";
 
 
 function App() {
   return (
+    <Router>
+      <Navigation />
 
-    <>
-      <Router>
-        <Routes>
-          
-          <Route path="/searchgroup" element={<Searchgroup/>}></Route>
-          <Route path="/main_design" element={<MainDesign/>}></Route>
-          <Route path="/login" element={<HandleLogin />} />
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path="/signup" element={<HandleSignUp />} />
-          <Route path="/About" element={<AboutUs/>}/>
+      <Routes>
+        {/* 👇 Make MainLandingPage the default first page */}
+        <Route path="/" element={<MainLandingPage />} />
 
-        </Routes>
-      </Router>
+        <Route path="/login" element={<HandleLogin />} />
+        <Route path="/signup" element={<HandleSignUp />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/SkillsExplorer" element={<SkillsExplorer />} />
+        <Route path="/SearchOccupations" element={<SearchOccupations />} />
 
-     
-    </>
+        {/* 👇 Redirect unknown routes back to main landing page */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+
+      <Footer />
+    </Router>
   );
 }
 

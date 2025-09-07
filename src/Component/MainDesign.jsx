@@ -1,14 +1,14 @@
 import React from 'react'
-import screenshoot from './assets/screenshoot.png'
-import mission from './assets/mision.avif'
+import screenshoot from '../assets/screenshoot.png'
+import mission from '../assets/mision.avif'
 import { motion } from "framer-motion";
-import download  from './assets/a.jpeg' 
+import download  from '../assets/a.jpeg' 
 
 
 function MainDesign() {
   return (
 
-      <div className="p-10 bg-[#247066]">
+      <div className="p-10 ">
           <div
               className={`bg-[url('assets/where.webp')] w-full md:w-2/3 bg-cover bg-center h-[400px] md:h-[500px] mt-20 md:mt-40 flex mx-auto rounded-2xl relative`}
           >
