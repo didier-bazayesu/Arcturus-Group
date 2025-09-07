@@ -48,10 +48,11 @@ export default function Navigation(){
           <li><Link to="/Home">Home</Link></li>
           <li><Link to="/About">About</Link></li>
           <li><Link to="/Report">Report</Link></li>
-          <li onClick={()=>handleAccount()}><button className="bg-[#2B7669] max-lg:w-full text-white px-5 py-2 lg:py-2 rounded-2xl">Account</button></li>
+          <li><Link to="/Login"><button className="bg-[#2B7669] max-lg:w-full text-white px-5 py-2 lg:py-2 rounded-2xl">Account</button></Link></li>
+          {/* <li onClick={()=>handleAccount()}><button className="bg-[#2B7669] max-lg:w-full text-white px-5 py-2 lg:py-2 rounded-2xl">Account</button></li>
          <div onClick={()=>handleClick()} className={`${!open?"inline":"hidden"} fixed lg:static right-5 top-5 lg:hidden`}>
           <img src={close} alt="" className="w-10" />
-        </div>
+        </div> */}
         </ul>
         <div onClick={()=>handleClick()} className={`${open?"hidden":"block"} fixed lg:hidden top-0 bottom-0 right-0 left-0 bg-[#032047b1] z-9 backdrop-blur-sm`}></div>
       </aside>

@@ -166,10 +166,10 @@ export default function MainLandingPage() {
         </motion.div>
          
       </div>
-      
+       <ConnectPart />
     </div>
      
-    <ConnectPart />
+    
     </>
     
   );
