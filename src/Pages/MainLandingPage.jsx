@@ -6,6 +6,7 @@ import ExploreTool from '../Component/exploreTool'
 import ConnectPart from '../Component/ConnectPart'
 import picture from '../assets/Clip path group.png';
 import MainDesign from '../Component/MainDesign'
+import SearchAndOccupations from './skillsAndOccupa'
 
 
 
@@ -17,13 +18,7 @@ export default function MainLandingPage() {
         <ExploreTool />
      <ConversionAnimation />
     <div className="overflow-x-hidden"> {/* Add this wrapper to prevent horizontal scroll */}
-      <div className="  sm:px-6  "> {/* Add consistent padding */}
-        <div className="flex  flex-row  mb-6 gap-4 sm:gap-5 max-w-7xl mt-5  sm:pb-5 justify-center ">
-          <img src={picture} alt="Tabiya Logo" className="w-16 h-16 sm:w-10 sm:h-10  md:h-20 md:w-20 sm:mx-0  " />
-          <h1 className="font-bold text-3xl sm:text-5xl text-center sm:text-left text-[#032147]">tabiya</h1>
-        </div>
-
-      </div>
+     <SearchAndOccupations />
 
       <div className="bg-gray-50 text-gray-800">
         {/* Hero Section */}
