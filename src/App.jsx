@@ -7,6 +7,7 @@ import MainLandingPage from "./Pages/MainLandingPage"
 import ShortReport from "./Pages/shortReport"
 import { Navigation } from "./Pages/navigation"
 import SearchAndOccupations from './Pages/skillsAndOccupa'
+import ConnectPart from "./Component/ConnectPart";
 
 
 
@@ -30,6 +31,8 @@ function App() {
     <Footer/> 
     </BrowserRouter> */}
     <SearchAndOccupations />
+
+    <ConnectPart/>
 
     </>
 
