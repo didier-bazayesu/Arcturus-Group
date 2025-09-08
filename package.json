@@ -17,6 +17,8 @@
     "d3": "^7.9.0",
     "express": "^5.1.0",
     "framer-motion": "^12.23.12",
+    "graphology": "^0.26.0",
+    "graphology-layout-forceatlas2": "^0.10.1",
     "gsap": "^3.13.0",
     "lucide-react": "^0.542.0",
     "papaparse": "^5.5.3",
