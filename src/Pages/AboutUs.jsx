@@ -13,10 +13,10 @@ export default function LandingPage() {
             that recognizes both formal and informal work.
           </p>
           <a
-            href="#contact"
+            href="https://www.tabiya.org/"
             className="inline-block bg-white text-[#0047AB] font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition"
           >
-            Request a Demo
+            Explore more
           </a>
         </div>
       </section>

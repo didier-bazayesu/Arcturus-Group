@@ -3,11 +3,11 @@ import React from 'react';
 const Card = ({ title, description, icon }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center text-center">
-      {/* Icon */}
+   
       <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mb-4">
         {icon}
       </div>
-      {/* Card Title */}
+     
       <h2 className="text-xl font-bold text-blue-800 mb-2">{title}</h2>
       {/* Description */}
       <p className="text-gray-600 mb-6">{description}</p>
