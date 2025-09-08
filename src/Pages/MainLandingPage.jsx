@@ -11,6 +11,7 @@ import SearchAndOccupations from './skillsAndOccupa'
 
 
 
+
 export default function MainLandingPage() {
   return (
     <>
@@ -156,20 +157,28 @@ export default function MainLandingPage() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#0047AB]">Where We Work</h2>
               {/* Map */}
-              <div className="w-full h-64 md:h-96 flex items-center justify-center rounded-xl overflow-hidden">
+              {/* <div className="w-full h-64 md:h-96 flex items-center justify-center rounded-xl overflow-hidden">
                 <img src={download} alt="" className="w-full h-full object-cover" />
-              </div>
-            
+              </div> */}
+                <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600 mb-10">
+                  Tabiya collaborates with governments, NGOs, job platforms, and local communities
+                  across different regions of the world.
+                  Our work spans low- and middle-income countries where informal skills are often
+                  overlooked, and we aim to bridge that gap by providing digital public infrastructure
+                  that makes labor markets more inclusive and efficient.
+                  From rural areas to urban centers, we adapt our solutions to local needs and contexts.
+                </p>
+            <MainDesign/>
             </div>
           </section>
          
         </motion.div>
          
       </div>
-       <ConnectPart />
+      
     </div>
      
-    
+    <ConnectPart />
     </>
     
   );

@@ -10,7 +10,7 @@ import SkillsExplorer from "./Pages/SearchSkills";
 import SearchOccupations from "./Pages/SearchOccupations";
 import Dashboard from "./Pages/dashboard"; //map for what we do.
 import HomePage from "./Pages/landPageExplore";
-import ExploreTool from "./Component/exploreTool";
+
 
 
 
